@@ -15,7 +15,7 @@
     <!-- ======== HEADER / NAVEGACIÓN ======== -->
     <header class="main-header">
         <div class="container">
-            <a href="#inicio" class="logo">Felipe Acosta | Ingeniero en Multimedia</a>
+            <a href="#inicio" class="logo">Felipe Acosta | adfgVD Ingeniero en Multimedia</a>
             <nav class="main-nav">
                 <ul>
                     <li><a href="#proyectos">Proyectos</a></li>
