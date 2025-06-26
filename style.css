@@ -1,0 +1,558 @@
+/* ==========================================================================
+   1. VARIABLES GLOBALES Y RESET
+   ========================================================================== */
+:root {
+    --color-background: #111111;
+    --color-surface: #1d1d1d;
+    --color-primary: #956eff;
+    --color-primary-rgb: 149, 110, 255; /* Color primario en formato RGB */
+    --color-text: #e0e0e0;
+    --color-text-muted: #888888;
+    --font-titles: 'Bebas Neue', sans-serif;
+    --font-body: 'Montserrat', sans-serif;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    line-height: 1.6;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-titles);
+    font-weight: normal;
+    letter-spacing: 1.5px;
+}
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ==========================================================================
+   2. ESTILOS GENERALES
+   ========================================================================== */
+.section { padding: 100px 0; }
+.section-title {
+    text-align: left;
+    font-size: 3rem;
+    margin-bottom: 50px;
+    color: var(--color-primary);
+}
+.cta-button {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.cta-button:hover {
+    transform: translateY(-3px);
+    background-color: #9333ea;
+}
+.text-center { text-align: center !important; }
+
+/* --- Estilo para enlaces de acción dentro de los proyectos --- */
+.action-link {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 5px 10px;
+    border: 2px solid var(--color-primary);
+    border-radius: 8px;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 350;
+    font-family: var(--font-body);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.action-link:hover {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+/* ==========================================================================
+   3. HEADER Y NAVEGACIÓN (CON CENTRADO REAL)
+   ========================================================================== */
+.main-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 20px 0;
+    background-color: rgba(17, 17, 17, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-surface);
+    transition: background-color 0.4s ease;
+}
+
+.main-header .container {
+    display: flex;
+    align-items: center;
+    /* Mantenemos space-between para cuando el logo aparece */
+    justify-content: space-between; 
+    /* Hacemos el contenedor relativo para posicionar la navegación de forma absoluta */
+    position: relative;
+}
+
+.logo {
+    font-size: 2rem;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-family: var(--font-titles);
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.main-nav {
+    /* Estado inicial: Posicionada absolutamente en el centro del contenedor */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); /* Truco clásico para centrado perfecto */
+    transition: transform 0.5s ease-in-out;
+}
+
+/* --- ESTADO DEL HEADER CUANDO SE HACE SCROLL --- */
+.main-header.scrolled .logo {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.main-header.scrolled .main-nav {
+    /* Al hacer scroll, la volvemos a su estado de flujo normal */
+    position: static; /* La devolvemos al flujo del documento */
+    transform: translate(0, 0); /* Reseteamos la transformación */
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+.main-nav a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+.main-nav a:hover, .main-nav a.active {
+    color: var(--color-primary);
+}
+
+/* ==========================================================================
+   4. SECCIÓN HERO
+   ========================================================================== */
+.hero-section { 
+    min-height: 100vh; /* <-- CAMBIO 1: Permite que la sección sea más pequeña si el contenido cabe */
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; /* <-- CAMBIO 2: Lo volvemos a centrar verticalmente */
+    padding-bottom: 10vh; /* <-- CAMBIO 3: Añadimos un padding inferior para controlar el espacio */
+    text-align: center; 
+    padding-left: 20px;
+    padding-right: 20px;
+    position: relative; 
+    overflow: hidden; 
+}
+.hero-title-container { margin-top: 3rem; }
+.hero-title-container h1 { font-size: 4.5rem; line-height: 1; color: var(--color-text); margin-bottom: 0.5rem; }
+.hero-title-container h2 { font-size: 2rem; color: var(--color-primary); letter-spacing: 2px; }
+
+
+/* ======== ESTILOS PARA METAHUMAN INTERACTIVO (VIDEO) ======== */
+#metahuman-video-container {
+    width: 70%;
+    max-width: 600px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative; /* Clave para posicionar el botón dentro */
+    box-shadow: 0 0 40px rgba(173, 101, 255, 0.25);
+    border: 2px solid var(--color-surface);
+}
+
+#metahuman-video {
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+    transform: scale(1.4) translateY(5%); 
+}
+
+/* ======== ESTILOS PARA EL NUEVO BOTÓN DE INTERACCIÓN ======== */
+.interaction-prompt {
+    position: absolute;
+    bottom: 10%; /* Lo posicionamos en la parte inferior del círculo */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+
+    /* Estilo Glassmorphism */
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    /* Diseño y tipografía */
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    border-radius: 50px;
+    cursor: pointer;
+
+    /* Layout interno (icono + texto) */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    /* Transiciones suaves */
+    transition: background 0.3s ease, border-color 0.3s ease, opacity 0.4s ease, transform 0.4s ease;
+
+    animation: pulse-glow 1s infinite ease-in-out;
+}
+
+.interaction-prompt:hover {
+    background: rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Ocultamos el botón cuando la interacción está activa */
+body.interaction-active .interaction-prompt {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+    pointer-events: none; /* Importante para que no intercepte clics cuando está invisible */
+}
+
+
+/* ======== CAPA DE INTERACCIÓN ======== */
+#interaction-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+    cursor: crosshair;
+    display: none;
+}
+body.interaction-active #interaction-overlay {
+    display: block;
+}
+
+/* ==========================================================================
+   5. SECCIÓN DE PROYECTOS (VERSIÓN FINAL Y CORREGIDA)
+   ========================================================================== */
+
+/* -- Contenedor Principal de la Cuadrícula */
+.proyectos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+    justify-items: center;
+}
+
+/* -- Estilos de Texto Comunes para todos los Proyectos */
+.gallery-description-column span, 
+.video-card-content span, 
+.horizontal-card-content span {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--color-primary);
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+.gallery-description-column h3, 
+.video-card-content h3, 
+.horizontal-card-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+.gallery-description-column p, 
+.video-card-content p, 
+.horizontal-card-content p {
+    color: var(--color-text-muted);
+}
+
+
+/* -- 1. PROYECTO TIPO GALERÍA (reutilizable para Renders, Cómic y Brochure) */
+.proyecto-galeria-card {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.gallery-frame-mockup {
+    width: 95%; /* Tamaño grande */
+    max-width: 1400px;
+    background-color: #0a0a0a;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3), 0 0 0 1px var(--color-surface);
+}
+.gallery-inner-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.gallery-description-column {
+    width: 30%; /* Texto 30% */
+    text-align: left;
+}
+.gallery-carousel-column {
+    width: 70%; /* Visual 70% */
+    flex-shrink: 0;
+}
+
+/* --- Carruseles Splide dentro de la galería --- */
+#renders-carrusel, 
+#comic-splide, 
+#brochure-splide,
+#menu-splide { /* <-- Corregido para apuntar al contenedor del carrusel */
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Estilos para las IMÁGENES de cada carrusel */
+#renders-carrusel .splide__slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Para los renders que deben llenar el espacio */
+}
+
+#comic-splide .splide__slide img, 
+#brochure-splide .splide__slide img,
+#menu-splide .splide__slide img { /* <-- Corregido para apuntar a la imagen */
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Para que se vea la página/menú completo */
+}
+
+/* Proporción para los carruseles tipo libro/documento */
+#comic-splide .splide__slide, 
+#brochure-splide .splide__slide,
+#menu-splide .splide__slide {
+    aspect-ratio: 2 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000; /* Fondo por si la imagen no llena todo */
+}
+
+
+/* -- 2. PROYECTO VIDEO VERTICAL */
+.proyecto-video-card { display: flex; flex-direction: column; align-items: center; width: 100%; max-width: 325px; }
+.phone-mockup { width: 100%; aspect-ratio: 9 / 19.5; background-color: #1a1a1a; border-radius: 40px; padding: 12px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), inset 0 0 1px 2px rgba(255, 255, 255, 0.1); position: relative; }
+.phone-mockup::before { content: ''; position: absolute; top: 12px; left: 50%; transform: translateX(-50%); width: 40%; height: 20px; background-color: #111; border-radius: 0 0 10px 10px; z-index: 2; }
+.phone-screen { width: 100%; height: 100%; background-color: #000; border-radius: 28px; overflow: hidden; }
+.phone-screen video { width: 100%; height: 100%; object-fit: cover; }
+.video-card-content { text-align: center; padding-top: 2rem; }
+
+
+/* -- 3. PROYECTO VIDEO HORIZONTAL */
+.proyecto-horizontal-card { grid-column: 1 / -1; display: flex; flex-direction: column; align-items: center; width: 75%; max-width: 900px; }
+.browser-mockup { width: 100%; background-color: var(--color-surface); border-radius: 10px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4); overflow: hidden; }
+.browser-header { background-color: #333; padding: 10px; display: flex; align-items: center; }
+.dots { display: flex; gap: 8px; }
+.dot { display: block; width: 12px; height: 12px; border-radius: 50%; }
+.dot.red { background-color: #ff5f56; } .dot.yellow { background-color: #ffbd2e; } .dot.green { background-color: #27c93f; }
+.browser-screen { aspect-ratio: 16 / 9; background-color: #000; }
+.browser-screen video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.horizontal-card-content { text-align: center; padding-top: 2rem; }
+
+
+/* -- 4. Estilos para Controles de Splide */
+.splide__arrow { background-color: rgba(0, 0, 0, 0.5); }
+.splide__arrow:hover { background-color: rgba(0, 0, 0, 0.8); }
+.splide__arrow svg { fill: #fff; }
+.splide__pagination__page { background-color: rgba(255, 255, 255, 0.4); }
+.splide__pagination__page.is-active { background-color: var(--color-primary); transform: scale(1.2); }
+
+/* ==========================================================================
+   7. SECCIÓN SOBRE MÍ Y HERRAMIENTAS
+   ========================================================================== */
+.bio-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+.bio-photo-wrapper {
+    flex-shrink: 0;
+}
+.profile-pic {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--color-primary);
+}
+.bio-text-wrapper {
+    flex-grow: 1;
+}
+.tools-subsection {
+    margin-top: 4rem;
+    border-top: 1px solid var(--color-surface);
+    padding-top: 3rem;
+}
+.tools-subtitle {
+    text-align: left;
+    font-family: var(--font-body);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    margin-bottom: 2rem;
+}
+.sobre-mi-tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+.tool-card {
+    background-color: var(--color-surface);
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border: 1px solid transparent;
+    transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+.tool-card:hover {
+    transform: translateY(-5px);
+    background-color: #2a2a2a;
+    border-color: var(--color-primary);
+}
+.tool-card img {
+    height: 30px;
+    filter: grayscale(1) opacity(0.7);
+    transition: filter 0.3s ease;
+}
+.tool-card:hover img {
+    filter: grayscale(0) opacity(1);
+}
+.tool-card span {
+    font-family: var(--font-body);
+    font-weight: 700;
+    color: var(--color-text);
+    font-size: 0.9rem;
+}
+
+
+/* ==========================================================================
+   7. SECCIÓN DE CONTACTO
+   ========================================================================== */
+.contact-form { max-width: 800px; margin: 0 auto; }
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; margin-bottom: 8px; color: var(--color-text-muted); }
+.form-group input, .form-group textarea { width: 100%; padding: 15px; background-color: var(--color-surface); border: 1px solid #333; border-radius: 8px; color: var(--color-text); font-family: var(--font-body); font-size: 1rem; transition: border-color 0.3s ease; }
+.form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--color-primary); }
+
+/* --- Estilos para los mensajes de estado del formulario --- */
+#form-status {
+    margin: 1.5rem 0;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-align: center;
+    display: none;
+}
+
+#form-status.status-success,
+#form-status.status-error {
+    display: block;
+}
+
+#form-status.status-success {
+    background-color: rgba(39, 201, 63, 0.2);
+    color: #27c93f;
+    border: 1px solid #27c93f;
+}
+
+#form-status.status-error {
+    background-color: rgba(255, 95, 86, 0.2);
+    color: #ff5f56;
+    border: 1px solid #ff5f56;
+}
+
+/* ==========================================================================
+   8. FOOTER Y ANIMACIONES
+   ========================================================================== */
+.main-footer { text-align: center; padding: 40px 0; margin-top: 60px; border-top: 1px solid var(--color-surface); color: var(--color-text-muted); }
+.fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* ======== ANIMACIÓN PARA EL BOTÓN DE INTERACCIÓN ======== */
+@keyframes pulse-glow {
+  0% {
+    transform: translateX(-50%) scale(1);
+    box-shadow: 0 0 8px rgba(var(--color-primary-rgb), 0.3);
+  }
+  50% {
+    transform: translateX(-50%) scale(1.05);
+    box-shadow: 0 0 20px rgba(var(--color-primary-rgb), 0.6);
+  }
+  100% {
+    transform: translateX(-50%) scale(1);
+    box-shadow: 0 0 8px rgba(var(--color-primary-rgb), 0.3);
+  }
+}
+
+/* ==========================================================================
+   9. MEDIA QUERIES (DISEÑO RESPONSIVE)
+   ========================================================================== */
+
+@media (max-width: 820px) {
+    .section { padding: 80px 0; }
+    .section-title { font-size: 2.2rem; }
+    /* ======== CAMBIOS PARA EL HEADER EN MÓVIL (VERSIÓN SIMPLE) ======== */
+    .main-header {
+        transform: translateY(-100%);
+        transition: transform 0.5s ease-in-out;
+    }
+
+    /* 1. Ocultamos permanentemente la navegación en móvil */
+    .main-nav {
+        display: none;
+    }
+
+    /* 2. El contenedor del header siempre centrará su contenido */
+    .main-header .container {
+        justify-content: center;
+    }
+
+    /* 3. Cuando se hace scroll, el header aparece */
+    .main-header.scrolled {
+        transform: translateY(0);
+    }
+    .hero-title-container h1 { font-size: 2.5rem; }
+    .hero-title-container h2 { font-size: 1.2rem; }
+    #metahuman-video-container { width: 100%; max-width: 450px;}
+    .proyectos-grid { grid-template-columns: 1fr; gap: 4rem; }
+    .gallery-frame-mockup { width: 100%; padding: 1rem; }
+    .gallery-inner-container { flex-direction: column !important; gap: 1.5rem; }
+    .gallery-inner-container > .gallery-carousel-column:first-child + .gallery-description-column { order: 1; }
+    .gallery-description-column, .gallery-carousel-column { width: 100%; }
+    .gallery-description-column { text-align: center; padding-top: 2rem; }
+    .proyecto-horizontal-card { width: 100%; }
+    .phone-mockup { max-width: 350px; }
+    .bio-container { flex-direction: column; text-align: center; }
+    .profile-pic { width: 200px; height: 200px; }
+    .bio-text-wrapper { margin-top: 2rem; }
+    .sobre-mi-tools-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+    .logo { font-size: 1.25rem; }
+    .section { padding: 60px 0; }
+}

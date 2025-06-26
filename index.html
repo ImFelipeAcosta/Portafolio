@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felipe Acosta | Ingeniero en Multimedia</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+</head>
+<body>
+
+    <!-- ======== HEADER / NAVEGACIÓN ======== -->
+    <header class="main-header">
+        <div class="container">
+            <a href="#inicio" class="logo">Felipe Acosta | Ingeniero en Multimedia</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#sobre-mi">Sobre mí</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- ======== SECCIÓN INICIO (HERO) ======== -->
+        <section id="inicio" class="hero-section">
+            <!-- Contenedor para el video interactivo -->
+            <div id="metahuman-video-container" class="fade-in">
+                <video id="metahuman-video" playsinline muted preload="auto" src="Multimedia/Videos/MetaFelipe.mp4"></video>
+                
+                <!-- ======== BOTÓN MOVIDO Y REDISEÑADO ======== -->
+                <button id="toggle-interaction-btn" class="interaction-prompt">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="16" height="16" fill="currentColor"><path d="M192 0C103.6 0 32 71.6 32 160V352c0 88.4 71.6 160 160 160s160-71.6 160-160V160C352 71.6 280.4 0 192 0zM224 160v32c0 17.7-14.3 32-32 32s-32-14.3-32-32V160c0-17.7 14.3-32 32-32s32 14.3 32 32z"/></svg>
+                    <span>Interactuar</span>
+                </button>
+            </div>
+            <div class="hero-title-container fade-in">
+                <h1>Raúl Felipe Acosta Fontecha</h1>
+                <h2>Ingeniero en Multimedia</h2>
+            </div>
+        </section>
+
+        <!-- (El resto de tu HTML sigue igual) -->
+        
+        <!-- ======== SECCIÓN DE PROYECTOS (TEXTOS CORREGIDOS) ======== -->
+        <section id="proyectos" class="section">
+            <div class="container">
+                <h2 class="section-title fade-in">Portafolio de Proyectos</h2>
+                <div class="proyectos-grid">
+        
+                    <!-- Proyecto 1: Meta human -->
+                    <div class="proyecto-horizontal-card full-width-grid-item fade-in">
+                        <div class="browser-mockup">
+                            <div class="browser-header">
+                                <div class="dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+                            </div>
+                            <div class="browser-screen">
+                                <video src="Multimedia/Videos/Muestra meta human.mp4" poster="Multimedia/Videos/Portadas/Metta.png" playsinline loop muted controls></video>
+                            </div>
+                        </div>
+                        <div class="horizontal-card-content">
+                            <span class="category">Escaneo 3D / Modelado 3D</span>
+                            <h3>Metahuman con Escaneo 3D</h3>
+                            <p>En este proyecto personal, mi objetivo fue crear un <strong>modelo 3D</strong> fotorrealista de mí mismo. Para lograrlo, realicé un <strong>escaneo 3D</strong> de mi cabeza con <strong>PolyCam</strong> para <strong>generar una malla</strong> base. Posteriormente, suavicé y refiné esta malla en <strong>Blender</strong> y la importé a <strong>Unreal Engine</strong>, donde utilicé la herramienta <strong>MetaHuman</strong> para generar mi versión digital final.</p>
+                        </div>
+                    </div>
+        
+                    <!-- Proyecto 2: Cómic Interactivo -->
+                    <div class="proyecto-galeria-card full-width-grid-item fade-in">
+                        <div class="gallery-frame-mockup">
+                            <div class="gallery-inner-container">
+                                <div class="gallery-carousel-column">
+                                    <div id="comic-splide" class="splide">
+                                        <div class="splide__track">
+                                            <ul class="splide__list">
+                                                <li class="splide__slide"><img src="Multimedia/Render 3d/Comic/001.png" alt="Portada"></li>
+                                                <li class="splide__slide"><img src="Multimedia/Render 3d/Comic/002.png" alt="Página 1"></li>
+                                                <li class="splide__slide"><img src="Multimedia/Render 3d/Comic/003.png" alt="Página 2"></li>
+                                                <li class="splide__slide"><img src="Multimedia/Render 3d/Comic/004.png" alt="Página 3"></li>
+                                                <li class="splide__slide"><img src="Multimedia/Render 3d/Comic/005.png" alt="Página 4"></li>
+                                                <li class="splide__slide"><img src="Multimedia/Render 3d/Comic/006.png" alt="Página 5"></li>
+                                                <li class="splide__slide"><img src="Multimedia/Render 3d/Comic/007.png" alt="Página 6"></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="gallery-description-column">
+                                    <span class="category">Ilustración / Narrativa Gráfica</span>
+                                    <h3>Amor a Contraluz</h3>
+                                    <p>Realicé este proyecto en su totalidad con <strong>Autodesk Maya</strong>. Mi trabajo incluyó la construcción de <strong>escenarios</strong>, la pose de los personajes, el manejo de cámaras y un detallado proceso de <strong>lighting y shading</strong>. Finalmente, generé los renders con el motor <strong>Arnold</strong>.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Proyecto 3: Galería de Renders -->
+                    <div class="proyecto-galeria-card full-width-grid-item fade-in">
+                        <div class="gallery-frame-mockup">
+                            <div class="gallery-inner-container">
+                                <div class="gallery-description-column">
+                                    <span class="category">Diseño 3D / Render</span>
+                                    <h3>Modelado 3D Monstruo</h3>
+                                    <p>En este proyecto conceptualicé y modelé un monstruo que representa la intimidación por identidad de género. Para ello, utilicé <strong>ZBrush</strong> para la escultura y <strong>Substance 3D</strong> para el texturizado. Además, creé el personaje femenino con <strong>MetaHuman de Unreal Engine</strong> y realicé la composición final en <strong>Blender</strong>.</p>
+                                </div>
+                                <div class="gallery-carousel-column">
+                                    <div id="renders-carrusel" class="splide">
+                                        <div class="splide__track">
+                                            <ul class="splide__list">
+                                                <li class="splide__slide"><img src="Multimedia/Render 3d/Diseno.png" alt="Diseño intimidación por identidad de genero"></li>
+                                                <li class="splide__slide"><img src="Multimedia/Render 3d/MonstruoSISI.png" alt="Render de perfil de criatura"></li>
+                                                <li class="splide__slide"><img src="Multimedia/Render 3d/Monstruo lateral.png" alt="Render lateral de criatura"></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Proyecto 4: Video Vertical 1 -->
+                    <div class="proyecto-video-card fade-in">
+                        <div class="phone-mockup">
+                            <div class="phone-screen">
+                                <video src="Multimedia/Videos/Lalaland.mp4" poster="Multimedia/Videos/Portadas/Yoyo.png" playsinline loop muted controls></video>
+                            </div>
+                        </div>
+                        <div class="video-card-content">
+                            <span class="category">Edición de Vídeo / Post-producción</span>
+                            <h3>Recreación "Lalaland"</h3>
+                            <p>Asumí la dirección y postproducción de esta escena, donde me enfoqué en la <strong>corrección de color, composición de planos y sincronización de audio</strong>, todo dentro de <strong>DaVinci Resolve.</strong></p>
+                        </div>
+                    </div>
+        
+                    <!-- Proyecto 5: Video Vertical 2 -->
+                    <div class="proyecto-video-card fade-in">
+                        <div class="phone-mockup">
+                            <div class="phone-screen">
+                                <video src="Multimedia/Videos/Drivers license.mp4" poster="Multimedia/Videos/Portadas/Olivia.png" playsinline loop muted controls></video>
+                            </div>
+                        </div>
+                        <div class="video-card-content">
+                            <span class="category">Edición de Vídeo / VFX</span>
+                            <h3>Transición "Drivers License"</h3>
+                            <p>Para este video, creé un efecto de transición con <strong>máscaras de recorte</strong> en <strong>Vegas Pro</strong>. Además, realicé el <strong>procesamiento de audio</strong> en <strong>Adobe Audition</strong> para lograr un cambio de tono preciso.</p>
+                        </div>
+                    </div>
+        
+                    <!-- Proyecto 6: Video Horizontal 3 -->
+                    <div class="proyecto-horizontal-card full-width-grid-item fade-in">
+                        <div class="browser-mockup">
+                            <div class="browser-header">
+                                <div class="dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+                            </div>
+                            <div class="browser-screen">
+                                <video src="Multimedia/Videos/NavegandoElCorazon.mp4" poster="Multimedia/Videos/Portadas/Navegando.png" playsinline loop muted controls></video>
+                            </div>
+                        </div>
+                        <div class="horizontal-card-content">
+                            <span class="category">Diseño Sonoro / Edición de Audio</span>
+                            <h3>Navegando El Corazón</h3>
+                            <p>En esta <strong>página web interactiva</strong>, fui el responsable de toda la <strong>producción de audio.</strong> Utilicé librerías de <strong>Pixabay</strong> para crear los <strong>sonidos ambientales</strong> y la <strong>herramienta de I.A. SUNO</strong> para generar las canciones. Finalmente, implementé el plugin <strong>DearVR</strong> en <strong>Adobe Audition</strong> para dar a todo el audio un <strong>efecto envolvente</strong>.</p>
+                            <a href="https://navegandoelcorazon.netlify.app" target="_blank" class="action-link">
+                                 Visita "Navegando El Corazón" aquí
+                            </a>
+                        </div>
+                    </div>
+        
+                    <!-- Proyecto 7: Video Horizontal 4 -->
+                    <div class="proyecto-horizontal-card full-width-grid-item fade-in">
+                        <div class="browser-mockup">
+                            <div class="browser-header">
+                                <div class="dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+                            </div>
+                            <div class="browser-screen">
+                                <video src="Multimedia/Videos/los 4 elementos.mp4" poster="Multimedia/Videos/Portadas/Los 4.png" playsinline loop muted controls></video>
+                            </div>
+                        </div>
+                        <div class="horizontal-card-content">
+                            <span class="category">Diseño Sonoro / Edición de Audio</span>
+                            <h3>Los 4 Elementos De La Multimedia</h3>
+                            <p>Para este <strong>videojuego educativo web</strong>, me encargué de la <strong>producción de audio</strong>. Diseñé y creé todos los <strong>sonidos ambientales</strong> para cada mundo del juego utilizando librerías de audio y <strong>Adobe Audition</strong>.</p>
+                            <a href="https://xdark-phoe-nix.itch.io/stem-juego" target="_blank" class="action-link">
+                                 Visita "Los 4 Elementos De La Multimedia" aquí
+                            </a>
+                        </div>
+                    </div>
+        
+                    <!-- Proyecto 8: Video Horizontal 5 -->
+                    <div class="proyecto-horizontal-card full-width-grid-item fade-in">
+                        <div class="browser-mockup">
+                            <div class="browser-header">
+                                <div class="dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+                            </div>
+                            <div class="browser-screen">
+                                <video src="Multimedia/Videos/Efectos.mp4" poster="Multimedia/Videos/Portadas/VFX.png" playsinline loop muted controls></video>
+                            </div>
+                        </div>
+                        <div class="horizontal-card-content">
+                            <span class="category">VFX / Composición</span>
+                            <h3>Showreel de Efectos Visuales</h3>
+                            <p>En esta compilación de <strong>efectos visuales</strong>, demuestro mis habilidades en <strong>tracking, composición y rotoscopia</strong>. Para estos proyectos, utilicé <strong>DaVinci Resolve, Adobe After Effects y Adobe Premiere Pro.</strong></p>
+                        </div>
+                    </div>
+        
+                    <!-- ========= PROYECTO 9: BROCHURE INTERACTIVO ========= -->
+                    <div class="proyecto-galeria-card full-width-grid-item fade-in">
+                                <div class="gallery-frame-mockup">
+                                    <div class="gallery-inner-container">
+                                        <div class="gallery-carousel-column">
+                                            <div id="brochure-splide" class="splide"> <!-- ID ÚNICO -->
+                                                <div class="splide__track">
+                                                    <ul class="splide__list">
+                                                        <li class="splide__slide"><img src="Multimedia/Diseno/Brochure/002.png" alt="Página 1"></li>
+                                                        <li class="splide__slide"><img src="Multimedia/Diseno/Brochure/003.png" alt="Página 2"></li>
+                                                        <li class="splide__slide"><img src="Multimedia/Diseno/Brochure/004.png" alt="Página 3"></li>
+                                                        <li class="splide__slide"><img src="Multimedia/Diseno/Brochure/005.png" alt="Página 4"></li>
+                                                        <li class="splide__slide"><img src="Multimedia/Diseno/Brochure/006.png" alt="Página 5"></li>
+                                                        <li class="splide__slide"><img src="Multimedia/Diseno/Brochure/007.png" alt="Página 6"></li>
+                                                        <li class="splide__slide"><img src="Multimedia/Diseno/Brochure/008.png" alt="Página 7"></li>
+                                                        <li class="splide__slide"><img src="Multimedia/Diseno/Brochure/009.png" alt="Página 8"></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="gallery-description-column">
+                                            <span class="category">Diseño Editorial / Maquetación</span>
+                                            <h3>Diseño de Brochure Corporativo</h3>
+                                            <p>Maquetación y diseño de un brochure, enfocado en una composición limpia, jerarquía visual clara y una presentación atractiva de la información.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <!-- ========= PROYECTO 10: MENÚ DE RESTAURANTE ========= -->
+        <div class="proyecto-galeria-card full-width-grid-item fade-in">
+            <div class="gallery-frame-mockup">
+                <div class="gallery-inner-container">
+        
+                    <!-- Columna Izquierda: La Descripción (AHORA PRIMERO) -->
+                    <div class="gallery-description-column">
+                        <span class="category">Diseño Gráfico / Diseño Editorial</span>
+                        <h3>Diseño de Menú para Restaurante</h3>
+                        <p>Creación de la identidad visual y maquetación para el menú del restaurante "Mi Carnal". El diseño se enfoca en una tipografía clara, una paleta de colores cálida y una organización intuitiva para mejorar la experiencia del cliente.</p>
+                    </div>
+        
+                    <!-- Columna Derecha: El Carrusel (AHORA SEGUNDO) -->
+                    <div class="gallery-carousel-column">
+                        <div id="menu-splide" class="splide"> <!-- ¡ID ÚNICO! -->
+                            <div class="splide__track">
+                                <ul class="splide__list">
+                                    <li class="splide__slide"><img src="Multimedia/Diseno/Menu/1.png" alt="Página 1 del Menú"></li>
+                                    <li class="splide__slide"><img src="Multimedia/Diseno/Menu/2.png" alt="Página 2 del Menú"></li>
+                                    <li class="splide__slide"><img src="Multimedia/Diseno/Menu/3.png" alt="Página 3 del Menú"></li>
+                                    <li class="splide__slide"><img src="Multimedia/Diseno/Menu/4.png" alt="Página 4 del Menú"></li>
+                                    <li class="splide__slide"><img src="Multimedia/Diseno/Menu/5.png" alt="Página 5 del Menú"></li>
+                                    <!-- Añade tantas páginas como tenga tu menú -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        
+                </div> <!-- Fin de .proyectos-grid -->
+            </div> <!-- Fin de .container -->
+        </section>
+        
+        <!-- ======== SECCIÓN SOBRE MÍ ======== -->
+                <section id="sobre-mi" class="section">
+                    <div class="container">
+                        <h2 class="section-title fade-in">Sobre Mí</h2>
+                        <div class="bio-container fade-in">
+                            <div class="bio-photo-wrapper">
+                                <img src="Multimedia/Perfil/Raul perfil.png" alt="Foto de Raúl Felipe Acosta Fontecha" class="profile-pic">
+                            </div>
+                            <div class="bio-text-wrapper">
+                                <p>¡Hola! Soy Felipe Acosta, un apasionado por el área de sistemas, he sido destacado por hacer las cosas con dedicación. Preparado para asumir retos, tengo la capacidad de aprender rápido lo que se me propone, trazando objetivos y metas por cumplir.</p>
+                                <p>Domino con gran habilidad la <strong>post producción de videoclips;</strong> trabajando en corrección de color, croma, efectos visuales, transiciones, planos, luces, entre otros. Así como la <strong>animación 3D y el render,</strong> desde manejo de cámaras, luces, movimiento de personajes, texturizado, entre otros.</p>
+                            </div>
+                        </div>
+                        <div class="tools-subsection fade-in">
+                            <h3 class="tools-subtitle">Herramientas Principales</h3>
+                            <div class="sobre-mi-tools-grid">
+                                <div class="tool-card"><img src="Multimedia/Logos/PremierePro.png" alt="Adobe Premiere Pro"> <span>Premiere Pro</span></div>
+                                <div class="tool-card"><img src="Multimedia/Logos/DaVinci.png" alt="DaVinci Resolve"> <span>DaVinci Resolve</span></div>
+                                <div class="tool-card"><img src="Multimedia/Logos/AfterEffects.png" alt="Adobe After Effects"> <span>After Effects</span></div>
+                                <div class="tool-card"><img src="Multimedia/Logos/Audition.png" alt="Adobe Audition"> <span>Audition</span></div>
+                                <div class="tool-card"><img src="Multimedia/Logos/Maya.svg" alt="Autodesk Maya"> <span>Maya</span></div>
+                                <div class="tool-card"><img src="Multimedia/Logos/Blender.png" alt="Blender"> <span>Blender</span></div>
+                                <div class="tool-card"><img src="Multimedia/Logos/Unreal.png" alt="Unreal Engine"> <span>Unreal Engine</span></div>
+                                <div class="tool-card"><img src="Multimedia/Logos/Unity.png" alt="Unity"> <span>Unity</span></div>
+                                <div class="tool-card"><img src="Multimedia/Logos/Illustrator.png" alt="Adobe Illustrator"> <span>Illustrator</span></div>
+                                <div class="tool-card"><img src="Multimedia/Logos/VisualStudio.png" alt="VS Code"> <span>VS Code</span></div>
+                                <div class="tool-card"><img src="Multimedia/Logos/Figma.png" alt="Figma"> <span>Figma</span></div>
+                                <div class="tool-card"><img src="Multimedia/Logos/Canva.png" alt="Canva"> <span>Canva</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+        
+                <!-- ======== SECCIÓN DE CONTACTO ======== -->
+                <section id="contacto" class="section">
+                <div class="container">
+                <h2 class="section-title text-center fade-in">Hablemos</h2>
+                <!-- Formulario conectado a Formspree -->
+                <form id="contact-form" class="contact-form fade-in" action="https://formspree.io/f/mvgrbzyg" method="POST">
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <!-- Es importante que este input tenga name="email" o name="_replyto" -->
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+        
+                    <!-- Div para mostrar mensajes de estado (éxito/error) -->
+                    <div id="form-status"></div>
+        
+                    <button type="submit" class="cta-button">Enviar Mensaje</button>
+                </form>
+                </div>
+                </section>
+    </main>
+
+    <!-- ======== FOOTER ======== -->
+    <footer class="main-footer">
+        <div class="container">
+            <p>© 2025 Felipe Acosta. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    
+    <!-- ======== CAPA DE INTERACCIÓN AÑADIDA ======== -->
+    <div id="interaction-overlay"></div>
+
+
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="script.js" defer></script> 
+
+</body>
+</html>
