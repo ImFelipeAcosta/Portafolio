@@ -538,7 +538,7 @@ body.interaction-active #interaction-overlay {
     .hero-title-container h1 { font-size: 2.5rem; }
     .hero-title-container h2 { font-size: 1.2rem; }
     #metahuman-video-container { width: 100%; max-width: 450px;}
-    .proyectos-grid { grid-template-columns: 1fr; gap: 4rem; }
+     .proyectos-grid { grid-template-columns: 1fr; gap: 4rem; }
     .gallery-frame-mockup { width: 100%; padding: 1rem; }
     .gallery-inner-container { flex-direction: column !important; gap: 1.5rem; }
     .gallery-inner-container > .gallery-carousel-column:first-child + .gallery-description-column { order: 1; }
