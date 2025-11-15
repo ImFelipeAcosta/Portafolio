@@ -1,5 +1,91 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // --- SISTEMA DE TRADUCCIÓN ---
+    const translations = {
+        es: {
+            "Proyectos": "Proyectos",
+            "Sobre mí": "Sobre mí",
+            "Contacto": "Contacto",
+            "Ingeniero en Multimedia": "Ingeniero en Multimedia",
+            "Portafolio de Proyectos": "Portafolio de Proyectos",
+            "Sobre Mí": "Sobre Mí",
+            "Hablemos": "Hablemos",
+            "Nombre": "Nombre",
+            "Email": "Email",
+            "Mensaje": "Mensaje",
+            "Enviar Mensaje": "Enviar Mensaje",
+            "Interactuar": "Interactuar"
+        },
+        en: {
+            "Proyectos": "Projects",
+            "Sobre mí": "About Me",
+            "Contacto": "Contact",
+            "Ingeniero en Multimedia": "Multimedia Engineer",
+            "Portafolio de Proyectos": "Project Portfolio",
+            "Sobre Mí": "About Me",
+            "Hablemos": "Let's Talk",
+            "Nombre": "Name",
+            "Email": "Email",
+            "Mensaje": "Message",
+            "Enviar Mensaje": "Send Message",
+            "Interactuar": "Interact"
+        }
+    };
+
+    // Función para cambiar idioma
+    function changeLanguage(lang) {
+        document.body.dataset.language = lang;
+        localStorage.setItem('preferredLanguage', lang);
+        
+        // Actualizar todos los elementos con atributos data-es y data-en
+        document.querySelectorAll('[data-es][data-en]').forEach(element => {
+            const text = element.getAttribute(`data-${lang}`);
+            if (text) {
+                // Actualizar usando textContent (sin HTML)
+                element.textContent = text;
+            }
+        });
+
+        // Actualizar placeholders del formulario
+        const namePlaceholder = lang === 'es' ? 'Tu nombre' : 'Your name';
+        const emailPlaceholder = lang === 'es' ? 'tu@email.com' : 'your@email.com';
+        const messagePlaceholder = lang === 'es' ? 'Escribe tu mensaje...' : 'Write your message...';
+        
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const messageInput = document.getElementById('message');
+        
+        if (nameInput) nameInput.placeholder = namePlaceholder;
+        if (emailInput) emailInput.placeholder = emailPlaceholder;
+        if (messageInput) messageInput.placeholder = messagePlaceholder;
+
+        // Actualizar botón de idioma
+        const langBtn = document.getElementById('lang-btn');
+        if (langBtn) {
+            if (lang === 'es') {
+                langBtn.dataset.currentLang = 'es';
+                langBtn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><span class="lang-text">ES</span>';
+            } else {
+                langBtn.dataset.currentLang = 'en';
+                langBtn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><span class="lang-text">EN</span>';
+            }
+        }
+    }
+
+    // Cargar idioma guardado o usar inglés por defecto
+    const savedLanguage = localStorage.getItem('preferredLanguage') || 'en';
+    changeLanguage(savedLanguage);
+
+    // Evento del botón de traducción
+    const langBtn = document.getElementById('lang-btn');
+    if (langBtn) {
+        langBtn.addEventListener('click', () => {
+            const currentLang = document.body.dataset.language;
+            const newLang = currentLang === 'es' ? 'en' : 'es';
+            changeLanguage(newLang);
+        });
+    }
+
     // --- LÓGICA PARA EL HEADER DINÁMICO (DISPARADOR AJUSTADO) ---
     const header = document.querySelector('.main-header');
     // Ahora, nuestro elemento de referencia es el contenedor del título del inicio
@@ -86,6 +172,8 @@ document.addEventListener('DOMContentLoaded', () => {
     async function handleSubmit(event) {
         event.preventDefault();
         const data = new FormData(event.target);
+        const currentLang = document.body.dataset.language;
+        
         try {
             const response = await fetch(event.target.action, {
                 method: form.method,
@@ -93,20 +181,32 @@ document.addEventListener('DOMContentLoaded', () => {
                 headers: { 'Accept': 'application/json' }
             });
             if (response.ok) {
-                formStatus.innerHTML = "¡Gracias por tu mensaje! Te responderé pronto.";
+                const successMsg = currentLang === 'en' 
+                    ? "Thank you for your message! I'll respond soon." 
+                    : "¡Gracias por tu mensaje! Te responderé pronto.";
+                formStatus.innerHTML = successMsg;
                 formStatus.className = 'status-success';
                 form.reset();
             } else {
                 const errorData = await response.json();
                 if (Object.hasOwn(errorData, 'errors')) {
-                    formStatus.innerHTML = `Hubo un error: ${errorData["errors"].map(error => error["message"]).join(", ")}`;
+                    const errorMsg = currentLang === 'en'
+                        ? `Error: ${errorData["errors"].map(error => error["message"]).join(", ")}`
+                        : `Hubo un error: ${errorData["errors"].map(error => error["message"]).join(", ")}`;
+                    formStatus.innerHTML = errorMsg;
                 } else {
-                    formStatus.innerHTML = "Oops! Hubo un problema al enviar tu formulario.";
+                    const genericError = currentLang === 'en'
+                        ? "Oops! There was a problem sending your form."
+                        : "Oops! Hubo un problema al enviar tu formulario.";
+                    formStatus.innerHTML = genericError;
                 }
                 formStatus.className = 'status-error';
             }
         } catch (error) {
-            formStatus.innerHTML = "Oops! Hubo un problema de red al enviar tu formulario.";
+            const networkError = currentLang === 'en'
+                ? "Oops! There was a network issue sending your form."
+                : "Oops! Hubo un problema de red al enviar tu formulario.";
+            formStatus.innerHTML = networkError;
             formStatus.className = 'status-error';
         }
     }
@@ -124,6 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let targetTime = 0;
         const neutralTime = 0;
         const smoothingFactor = 0.1;
+        let isTouchDevice = () => /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
         // El botón solo activa la interacción
         interactionButton.addEventListener('click', () => {
@@ -131,8 +232,10 @@ document.addEventListener('DOMContentLoaded', () => {
             isInteractionActive = true;
             document.body.classList.add('interaction-active');
             
-            // ====== CAMBIO 1: El texto ya no cambia aquí ======
-            // No cambiamos el texto del botón, se queda como está.
+            // Cambiar texto del botón según idioma
+            const currentLang = document.body.dataset.language;
+            const buttonText = currentLang === 'en' ? 'Close' : 'Cerrar';
+            interactionButton.querySelector('span').textContent = buttonText;
         });
 
         // La capa superpuesta detiene la interacción
@@ -141,12 +244,13 @@ document.addEventListener('DOMContentLoaded', () => {
             isInteractionActive = false;
             document.body.classList.remove('interaction-active');
             
-            // ====== CAMBIO 2: Tampoco cambia el texto aquí ======
-            // Al desactivar, el botón vuelve a aparecer con su texto original.
+            // Restaurar texto del botón original
+            const currentLang = document.body.dataset.language;
+            const buttonText = currentLang === 'en' ? 'Interact' : 'Interactuar';
+            interactionButton.querySelector('span').textContent = buttonText;
         });
 
-        // El resto de la lógica sigue igual...
-        
+        // MOUSE MOVEMENT para escritorio
         interactionOverlay.addEventListener('mousemove', (event) => {
             if (isInteractionActive) {
                 const centerX = window.innerWidth / 2;
@@ -163,6 +267,26 @@ document.addEventListener('DOMContentLoaded', () => {
                 targetTime = (normalizedAngle / 360) * video.duration;
             }
         });
+
+        // TOUCH MOVEMENT para móviles
+        interactionOverlay.addEventListener('touchmove', (event) => {
+            if (isInteractionActive) {
+                event.preventDefault(); // Prevenir scroll
+                const touch = event.touches[0];
+                const centerX = window.innerWidth / 2;
+                const centerY = window.innerHeight / 2;
+                const touchX = touch.clientX - centerX;
+                const touchY = touch.clientY - centerY;
+                
+                let angle = Math.atan2(touchY, touchX) * (180 / Math.PI);
+                if (angle < 0) angle += 360;
+                
+                let normalizedAngle = angle + 90;
+                if (normalizedAngle > 360) normalizedAngle -= 360;
+                
+                targetTime = (normalizedAngle / 360) * video.duration;
+            }
+        }, { passive: false });
 
         function animationLoop() {
             let currentTarget = isInteractionActive ? targetTime : neutralTime;
@@ -196,6 +320,16 @@ document.addEventListener('DOMContentLoaded', () => {
             video.currentTime = neutralTime;
             targetTime = neutralTime;
             animationLoop();
+        });
+
+        // Para iOS, intentar reproducir el video (algunos navegadores lo requieren)
+        video.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (video.paused) {
+                video.play().catch(() => {
+                    console.log('Video autoplay no permitido');
+                });
+            }
         });
     }
 });
