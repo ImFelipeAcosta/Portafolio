@@ -11,17 +11,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
 </head>
-<body>
+<body data-language="en">
 
     <!-- ======== HEADER / NAVEGACIÓN ======== -->
     <header class="main-header">
         <div class="container">
-            <a href="#inicio" class="logo">Felipe Acosta | Ingeniero en Multimedia</a>
+            <a href="#inicio" class="logo" data-es="Felipe Acosta | Ingeniero en Multimedia" data-en="Felipe Acosta | Multimedia Engineer">Felipe Acosta | Ingeniero en Multimedia</a>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="#proyectos">Proyectos</a></li>
-                    <li><a href="#sobre-mi">Sobre mí</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="#proyectos" data-es="Proyectos" data-en="Projects">Proyectos</a></li>
+                    <li><a href="#sobre-mi" data-es="Sobre mí" data-en="About Me">Sobre mí</a></li>
+                    <li><a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a></li>
                 </ul>
             </nav>
         </div>
@@ -32,17 +32,20 @@
         <section id="inicio" class="hero-section">
             <!-- Contenedor para el video interactivo -->
             <div id="metahuman-video-container" class="fade-in">
-                <video id="metahuman-video" playsinline muted preload="auto" src="Multimedia/Videos/MetaFelipe.mp4"></video>
+                <video id="metahuman-video" playsinline muted preload="auto" webkit-playsinline>
+                    <source src="Multimedia/Videos/MetaFelipe.mp4" type="video/mp4">
+                    Tu navegador no soporta el elemento de video.
+                </video>
                 
                 <!-- ======== BOTÓN MOVIDO Y REDISEÑADO ======== -->
                 <button id="toggle-interaction-btn" class="interaction-prompt">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="16" height="16" fill="currentColor"><path d="M192 0C103.6 0 32 71.6 32 160V352c0 88.4 71.6 160 160 160s160-71.6 160-160V160C352 71.6 280.4 0 192 0zM224 160v32c0 17.7-14.3 32-32 32s-32-14.3-32-32V160c0-17.7 14.3-32 32-32s32 14.3 32 32z"/></svg>
-                    <span>Interactuar</span>
+                    <span data-es="Interactuar" data-en="Interact">Interactuar</span>
                 </button>
             </div>
             <div class="hero-title-container fade-in">
                 <h1>Raúl Felipe Acosta Fontecha</h1>
-                <h2>Ingeniero en Multimedia</h2>
+                <h2 data-es="Ingeniero en Multimedia" data-en="Multimedia Engineer">Ingeniero en Multimedia</h2>
             </div>
         </section>
 
@@ -51,7 +54,7 @@
         <!-- ======== SECCIÓN DE PROYECTOS (TEXTOS CORREGIDOS) ======== -->
         <section id="proyectos" class="section">
             <div class="container">
-                <h2 class="section-title fade-in">Portafolio de Proyectos</h2>
+                <h2 class="section-title fade-in" data-es="Portafolio de Proyectos" data-en="Project Portfolio">Portafolio de Proyectos</h2>
                 <div class="proyectos-grid">
         
                     <!-- Proyecto 1: Meta human -->
@@ -65,9 +68,9 @@
                             </div>
                         </div>
                         <div class="horizontal-card-content">
-                            <span class="category">Escaneo 3D / Modelado 3D</span>
-                            <h3>Metahuman con Escaneo 3D</h3>
-                            <p>En este proyecto personal, mi objetivo fue crear un <strong>modelo 3D</strong> fotorrealista de mí mismo. Para lograrlo, realicé un <strong>escaneo 3D</strong> de mi cabeza con <strong>PolyCam</strong> para <strong>generar una malla</strong> base. Posteriormente, suavicé y refiné esta malla en <strong>Blender</strong> y la importé a <strong>Unreal Engine</strong>, donde utilicé la herramienta <strong>MetaHuman</strong> para generar mi versión digital final.</p>
+                            <span class="category" data-es="Escaneo 3D / Modelado 3D" data-en="3D Scanning / 3D Modeling">Escaneo 3D / Modelado 3D</span>
+                            <h3 data-es="Metahuman con Escaneo 3D" data-en="Metahuman with 3D Scanning">Metahuman con Escaneo 3D</h3>
+                            <p data-es="En este proyecto personal, mi objetivo fue crear un modelo 3D fotorrealista de mí mismo. Para lograrlo, realicé un escaneo 3D de mi cabeza con PolyCam para generar una malla base. Posteriormente, suavicé y refiné esta malla en Blender y la importé a Unreal Engine, donde utilicé la herramienta MetaHuman para generar mi versión digital final." data-en="In this personal project, my goal was to create a photorealistic 3D model of myself. To achieve this, I performed a 3D scan of my head with PolyCam to generate a base mesh. Then, I refined the mesh in Blender and imported it into Unreal Engine, where I used the MetaHuman tool to generate my final digital version.">En este proyecto personal, mi objetivo fue crear un modelo 3D fotorrealista de mí mismo. Para lograrlo, realicé un escaneo 3D de mi cabeza con PolyCam para generar una malla base. Posteriormente, suavicé y refiné esta malla en Blender y la importé a Unreal Engine, donde utilicé la herramienta MetaHuman para generar mi versión digital final.</p>
                         </div>
                     </div>
         
@@ -91,9 +94,9 @@
                                     </div>
                                 </div>
                                 <div class="gallery-description-column">
-                                    <span class="category">Ilustración / Narrativa Gráfica</span>
+                                    <span class="category" data-es="Ilustración / Narrativa Gráfica" data-en="Illustration / Graphic Narrative">Ilustración / Narrativa Gráfica</span>
                                     <h3>Amor a Contraluz</h3>
-                                    <p>Realicé este proyecto en su totalidad con <strong>Autodesk Maya</strong>. Mi trabajo incluyó la construcción de <strong>escenarios</strong>, la pose de los personajes, el manejo de cámaras y un detallado proceso de <strong>lighting y shading</strong>. Finalmente, generé los renders con el motor <strong>Arnold</strong>.</p>
+                                    <p data-es="Realicé este proyecto en su totalidad con Autodesk Maya. Mi trabajo incluyó la construcción de escenarios, la pose de los personajes, el manejo de cámaras y un detallado proceso de lighting y shading. Finalmente, generé los renders con el motor Arnold." data-en="I completed this entire project with Autodesk Maya. My work included building scenarios, posing characters, managing cameras, and a detailed lighting and shading process. Finally, I generated the renders with the Arnold engine.">Realicé este proyecto en su totalidad con Autodesk Maya. Mi trabajo incluyó la construcción de escenarios, la pose de los personajes, el manejo de cámaras y un detallado proceso de lighting y shading. Finalmente, generé los renders con el motor Arnold.</p>
                                 </div>
                             </div>
                         </div>
@@ -104,9 +107,9 @@
                         <div class="gallery-frame-mockup">
                             <div class="gallery-inner-container">
                                 <div class="gallery-description-column">
-                                    <span class="category">Diseño 3D / Render</span>
-                                    <h3>Modelado 3D Monstruo</h3>
-                                    <p>En este proyecto conceptualicé y modelé un monstruo que representa la intimidación por identidad de género. Para ello, utilicé <strong>ZBrush</strong> para la escultura y <strong>Substance 3D</strong> para el texturizado. Además, creé el personaje femenino con <strong>MetaHuman de Unreal Engine</strong> y realicé la composición final en <strong>Blender</strong>.</p>
+                                    <span class="category" data-es="Diseño 3D / Render" data-en="3D Design / Rendering">Diseño 3D / Render</span>
+                                    <h3 data-es="Modelado 3D Monstruo" data-en="3D Monster Modeling">Modelado 3D Monstruo</h3>
+                                    <p data-es="En este proyecto conceptualicé y modelé un monstruo que representa la intimidación por identidad de género. Para ello, utilicé ZBrush para la escultura y Substance 3D para el texturizado. Además, creé el personaje femenino con MetaHuman de Unreal Engine y realicé la composición final en Blender." data-en="In this project I conceptualized and modeled a monster representing intimidation by gender identity. I used ZBrush for sculpting and Substance 3D for texturing. Additionally, I created the female character with Unreal Engine's MetaHuman and performed the final composition in Blender.">En este proyecto conceptualicé y modelé un monstruo que representa la intimidación por identidad de género. Para ello, utilicé ZBrush para la escultura y Substance 3D para el texturizado. Además, creé el personaje femenino con MetaHuman de Unreal Engine y realicé la composición final en Blender.</p>
                                 </div>
                                 <div class="gallery-carousel-column">
                                     <div id="renders-carrusel" class="splide">
@@ -131,9 +134,9 @@
                             </div>
                         </div>
                         <div class="video-card-content">
-                            <span class="category">Edición de Vídeo / Post-producción</span>
-                            <h3>Recreación "Lalaland"</h3>
-                            <p>Asumí la dirección y postproducción de esta escena, donde me enfoqué en la <strong>corrección de color, composición de planos y sincronización de audio</strong>, todo dentro de <strong>DaVinci Resolve.</strong></p>
+                            <span class="category" data-es="Edición de Vídeo / Post-producción" data-en="Video Editing / Post-production">Edición de Vídeo / Post-producción</span>
+                            <h3 data-es="Recreación &quot;Lalaland&quot;" data-en="Recreation &quot;Lalaland&quot;">Recreación "Lalaland"</h3>
+                            <p data-es="Asumí la dirección y postproducción de esta escena, donde me enfoqué en la corrección de color, composición de planos y sincronización de audio, todo dentro de DaVinci Resolve." data-en="I assumed the direction and post-production of this scene, focusing on color correction, shot composition, and audio synchronization, all within DaVinci Resolve.">Asumí la dirección y postproducción de esta escena, donde me enfoqué en la corrección de color, composición de planos y sincronización de audio, todo dentro de DaVinci Resolve.</p>
                         </div>
                     </div>
         
@@ -145,9 +148,9 @@
                             </div>
                         </div>
                         <div class="video-card-content">
-                            <span class="category">Edición de Vídeo / VFX</span>
-                            <h3>Transición "Drivers License"</h3>
-                            <p>Para este video, creé un efecto de transición con <strong>máscaras de recorte</strong> en <strong>Vegas Pro</strong>. Además, realicé el <strong>procesamiento de audio</strong> en <strong>Adobe Audition</strong> para lograr un cambio de tono preciso.</p>
+                            <span class="category" data-es="Edición de Vídeo / VFX" data-en="Video Editing / VFX">Edición de Vídeo / VFX</span>
+                            <h3 data-es="Transición &quot;Drivers License&quot;" data-en="Transition &quot;Drivers License&quot;">Transición "Drivers License"</h3>
+                            <p data-es="Para este video, creé un efecto de transición con máscaras de recorte en Vegas Pro. Además, realicé el procesamiento de audio en Adobe Audition para lograr un cambio de tono preciso." data-en="For this video, I created a transition effect with clipping masks in Vegas Pro. Additionally, I performed audio processing in Adobe Audition to achieve a precise tone change.">Para este video, creé un efecto de transición con máscaras de recorte en Vegas Pro. Además, realicé el procesamiento de audio en Adobe Audition para lograr un cambio de tono preciso.</p>
                         </div>
                     </div>
         
@@ -162,10 +165,10 @@
                             </div>
                         </div>
                         <div class="horizontal-card-content">
-                            <span class="category">Diseño Sonoro / Edición de Audio</span>
+                            <span class="category" data-es="Diseño Sonoro / Edición de Audio" data-en="Sound Design / Audio Editing">Diseño Sonoro / Edición de Audio</span>
                             <h3>Navegando El Corazón</h3>
-                            <p>En esta <strong>página web interactiva</strong>, fui el responsable de toda la <strong>producción de audio.</strong> Utilicé librerías de <strong>Pixabay</strong> para crear los <strong>sonidos ambientales</strong> y la <strong>herramienta de I.A. SUNO</strong> para generar las canciones. Finalmente, implementé el plugin <strong>DearVR</strong> en <strong>Adobe Audition</strong> para dar a todo el audio un <strong>efecto envolvente</strong>.</p>
-                            <a href="https://navegandoelcorazon.netlify.app" target="_blank" class="action-link">
+                            <p data-es="En esta página web interactiva, fui el responsable de toda la producción de audio. Utilicé librerías de Pixabay para crear los sonidos ambientales y la herramienta de I.A. SUNO para generar las canciones. Finalmente, implementé el plugin DearVR en Adobe Audition para dar a todo el audio un efecto envolvente." data-en="In this interactive web page, I was responsible for all audio production. I used Pixabay libraries to create ambient sounds and the AI tool SUNO to generate songs. Finally, I implemented the DearVR plugin in Adobe Audition to give all the audio an immersive effect.">En esta página web interactiva, fui el responsable de toda la producción de audio. Utilicé librerías de Pixabay para crear los sonidos ambientales y la herramienta de I.A. SUNO para generar las canciones. Finalmente, implementé el plugin DearVR en Adobe Audition para dar a todo el audio un efecto envolvente.</p>
+                            <a href="https://navegandoelcorazon.netlify.app" target="_blank" class="action-link" data-es="Visita &quot;Navegando El Corazón&quot; aquí" data-en="Visit &quot;Navegando El Corazón&quot; here">
                                  Visita "Navegando El Corazón" aquí
                             </a>
                         </div>
@@ -182,10 +185,10 @@
                             </div>
                         </div>
                         <div class="horizontal-card-content">
-                            <span class="category">Diseño Sonoro / Edición de Audio</span>
+                            <span class="category" data-es="Diseño Sonoro / Edición de Audio" data-en="Sound Design / Audio Editing">Diseño Sonoro / Edición de Audio</span>
                             <h3>Los 4 Elementos De La Multimedia</h3>
-                            <p>Para este <strong>videojuego educativo web</strong>, me encargué de la <strong>producción de audio</strong>. Diseñé y creé todos los <strong>sonidos ambientales</strong> para cada mundo del juego utilizando librerías de audio y <strong>Adobe Audition</strong>.</p>
-                            <a href="https://xdark-phoe-nix.itch.io/stem-juego" target="_blank" class="action-link">
+                            <p data-es="Para este videojuego educativo web, me encargué de la producción de audio. Diseñé y creé todos los sonidos ambientales para cada mundo del juego utilizando librerías de audio y Adobe Audition." data-en="For this educational web game, I was in charge of audio production. I designed and created all ambient sounds for each game world using audio libraries and Adobe Audition.">Para este videojuego educativo web, me encargué de la producción de audio. Diseñé y creé todos los sonidos ambientales para cada mundo del juego utilizando librerías de audio y Adobe Audition.</p>
+                            <a href="https://xdark-phoe-nix.itch.io/stem-juego" target="_blank" class="action-link" data-es="Visita &quot;Los 4 Elementos De La Multimedia&quot; aquí" data-en="Visit &quot;Los 4 Elementos De La Multimedia&quot; here">
                                  Visita "Los 4 Elementos De La Multimedia" aquí
                             </a>
                         </div>
@@ -202,9 +205,9 @@
                             </div>
                         </div>
                         <div class="horizontal-card-content">
-                            <span class="category">VFX / Composición</span>
-                            <h3>Showreel de Efectos Visuales</h3>
-                            <p>En esta compilación de <strong>efectos visuales</strong>, demuestro mis habilidades en <strong>tracking, composición y rotoscopia</strong>. Para estos proyectos, utilicé <strong>DaVinci Resolve, Adobe After Effects y Adobe Premiere Pro.</strong></p>
+                            <span class="category" data-es="VFX / Composición" data-en="VFX / Composition">VFX / Composición</span>
+                            <h3 data-es="Showreel de Efectos Visuales" data-en="Visual Effects Showreel">Showreel de Efectos Visuales</h3>
+                            <p data-es="En esta compilación de efectos visuales, demuestro mis habilidades en tracking, composición y rotoscopia. Para estos proyectos, utilicé DaVinci Resolve, Adobe After Effects y Adobe Premiere Pro." data-en="In this compilation of visual effects, I demonstrate my skills in tracking, composition, and rotoscoping. For these projects, I used DaVinci Resolve, Adobe After Effects, and Adobe Premiere Pro.">En esta compilación de efectos visuales, demuestro mis habilidades en tracking, composición y rotoscopia. Para estos proyectos, utilicé DaVinci Resolve, Adobe After Effects y Adobe Premiere Pro.</p>
                         </div>
                     </div>
         
@@ -229,9 +232,9 @@
                                             </div>
                                         </div>
                                         <div class="gallery-description-column">
-                                            <span class="category">Diseño Editorial / Maquetación</span>
-                                            <h3>Diseño de Brochure Corporativo</h3>
-                                            <p>Maquetación y diseño de un brochure, enfocado en una composición limpia, jerarquía visual clara y una presentación atractiva de la información.</p>
+                                            <span class="category" data-es="Diseño Editorial / Maquetación" data-en="Editorial Design / Layout">Diseño Editorial / Maquetación</span>
+                                            <h3 data-es="Diseño de Brochure Corporativo" data-en="Corporate Brochure Design">Diseño de Brochure Corporativo</h3>
+                                            <p data-es="Maquetación y diseño de un brochure, enfocado en una composición limpia, jerarquía visual clara y una presentación atractiva de la información." data-en="Layout and design of a brochure, focused on clean composition, clear visual hierarchy, and attractive information presentation.">Maquetación y diseño de un brochure, enfocado en una composición limpia, jerarquía visual clara y una presentación atractiva de la información.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -244,9 +247,9 @@
         
                     <!-- Columna Izquierda: La Descripción (AHORA PRIMERO) -->
                     <div class="gallery-description-column">
-                        <span class="category">Diseño Gráfico / Diseño Editorial</span>
-                        <h3>Diseño de Menú para Restaurante</h3>
-                        <p>Creación de la identidad visual y maquetación para el menú del restaurante "Mi Carnal". El diseño se enfoca en una tipografía clara, una paleta de colores cálida y una organización intuitiva para mejorar la experiencia del cliente.</p>
+                        <span class="category" data-es="Diseño Gráfico / Diseño Editorial" data-en="Graphic Design / Editorial Design">Diseño Gráfico / Diseño Editorial</span>
+                        <h3 data-es="Diseño de Menú para Restaurante" data-en="Restaurant Menu Design">Diseño de Menú para Restaurante</h3>
+                        <p data-es="Creación de la identidad visual y maquetación para el menú del restaurante &quot;Mi Carnal&quot;. El diseño se enfoca en una tipografía clara, una paleta de colores cálida y una organización intuitiva para mejorar la experiencia del cliente." data-en="Creation of the visual identity and layout for the &quot;Mi Carnal&quot; restaurant menu. The design focuses on clear typography, a warm color palette, and intuitive organization to enhance customer experience.">Creación de la identidad visual y maquetación para el menú del restaurante "Mi Carnal". El diseño se enfoca en una tipografía clara, una paleta de colores cálida y una organización intuitiva para mejorar la experiencia del cliente.</p>
                     </div>
         
                     <!-- Columna Derecha: El Carrusel (AHORA SEGUNDO) -->
@@ -276,18 +279,18 @@
         <!-- ======== SECCIÓN SOBRE MÍ ======== -->
                 <section id="sobre-mi" class="section">
                     <div class="container">
-                        <h2 class="section-title fade-in">Sobre Mí</h2>
+                        <h2 class="section-title fade-in" data-es="Sobre Mí" data-en="About Me">Sobre Mí</h2>
                         <div class="bio-container fade-in">
                             <div class="bio-photo-wrapper">
                                 <img src="Multimedia/Perfil/Raul perfil.png" alt="Foto de Raúl Felipe Acosta Fontecha" class="profile-pic">
                             </div>
                             <div class="bio-text-wrapper">
-                                <p>¡Hola! Soy Felipe Acosta, un apasionado por el área de sistemas, he sido destacado por hacer las cosas con dedicación. Preparado para asumir retos, tengo la capacidad de aprender rápido lo que se me propone, trazando objetivos y metas por cumplir.</p>
-                                <p>Domino con gran habilidad la <strong>post producción de videoclips;</strong> trabajando en corrección de color, croma, efectos visuales, transiciones, planos, luces, entre otros. Así como la <strong>animación 3D y el render,</strong> desde manejo de cámaras, luces, movimiento de personajes, texturizado, entre otros.</p>
+                                <p data-es="¡Hola! Soy Felipe Acosta, un apasionado por el área de sistemas, he sido destacado por hacer las cosas con dedicación. Preparado para asumir retos, tengo la capacidad de aprender rápido lo que se me propone, trazando objetivos y metas por cumplir." data-en="Hi! I'm Felipe Acosta, passionate about systems, I have been recognized for doing things with dedication. Ready to take on challenges, I have the ability to learn quickly what is proposed to me, setting objectives and goals to achieve.">¡Hola! Soy Felipe Acosta, un apasionado por el área de sistemas, he sido destacado por hacer las cosas con dedicación. Preparado para asumir retos, tengo la capacidad de aprender rápido lo que se me propone, trazando objetivos y metas por cumplir.</p>
+                                <p data-es="Domino con gran habilidad la post producción de videoclips; trabajando en corrección de color, croma, efectos visuales, transiciones, planos, luces, entre otros. Así como la animación 3D y el render, desde manejo de cámaras, luces, movimiento de personajes, texturizado, entre otros." data-en="I have great skill in video post-production; working on color correction, chroma, visual effects, transitions, shots, lighting, among others. As well as 3D animation and rendering, from camera management, lighting, character movement, texturing, among others.">Domino con gran habilidad la post producción de videoclips; trabajando en corrección de color, croma, efectos visuales, transiciones, planos, luces, entre otros. Así como la animación 3D y el render, desde manejo de cámaras, luces, movimiento de personajes, texturizado, entre otros.</p>
                             </div>
                         </div>
                         <div class="tools-subsection fade-in">
-                            <h3 class="tools-subtitle">Herramientas Principales</h3>
+                            <h3 class="tools-subtitle" data-es="Herramientas Principales" data-en="Main Tools">Herramientas Principales</h3>
                             <div class="sobre-mi-tools-grid">
                                 <div class="tool-card"><img src="Multimedia/Logos/PremierePro.png" alt="Adobe Premiere Pro"> <span>Premiere Pro</span></div>
                                 <div class="tool-card"><img src="Multimedia/Logos/DaVinci.png" alt="DaVinci Resolve"> <span>DaVinci Resolve</span></div>
@@ -309,27 +312,25 @@
                 <!-- ======== SECCIÓN DE CONTACTO ======== -->
                 <section id="contacto" class="section">
                 <div class="container">
-                <h2 class="section-title text-center fade-in">Hablemos</h2>
+                <h2 class="section-title text-center fade-in" data-es="Hablemos" data-en="Let's Talk">Hablemos</h2>
                 <!-- Formulario conectado a Formspree -->
                 <form id="contact-form" class="contact-form fade-in" action="https://formspree.io/f/mvgrbzyg" method="POST">
                     <div class="form-group">
-                        <label for="name">Nombre</label>
-                        <input type="text" id="name" name="name" required>
+                        <label for="name" data-es="Nombre" data-en="Name">Nombre</label>
+                        <input type="text" id="name" name="name" placeholder="Your name" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">Email</label>
-                        <!-- Es importante que este input tenga name="email" o name="_replyto" -->
-                        <input type="email" id="email" name="email" required>
+                        <label for="email" data-es="Email" data-en="Email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="your@email.com" required>
                     </div>
                     <div class="form-group">
-                        <label for="message">Mensaje</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <label for="message" data-es="Mensaje" data-en="Message">Mensaje</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Write your message..." required></textarea>
                     </div>
         
-                    <!-- Div para mostrar mensajes de estado (éxito/error) -->
                     <div id="form-status"></div>
         
-                    <button type="submit" class="cta-button">Enviar Mensaje</button>
+                    <button type="submit" class="cta-button" data-es="Enviar Mensaje" data-en="Send Message">Enviar Mensaje</button>
                 </form>
                 </div>
                 </section>
@@ -338,9 +339,20 @@
     <!-- ======== FOOTER ======== -->
     <footer class="main-footer">
         <div class="container">
-            <p>© 2025 Felipe Acosta. Todos los derechos reservados.</p>
+            <p data-es="© 2025 Felipe Acosta. Todos los derechos reservados." data-en="© 2025 Felipe Acosta. All rights reserved.">© 2025 Felipe Acosta. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <!-- ======== BOTÓN FLOTANTE DE TRADUCCIÓN ======== -->
+    <div id="language-toggle" class="language-toggle">
+        <button id="lang-btn" class="lang-button" data-current-lang="en" title="Toggle language / Cambiar idioma">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+            <span class="lang-text">EN</span>
+        </button>
+    </div>
     
     <!-- ======== CAPA DE INTERACCIÓN AÑADIDA ======== -->
     <div id="interaction-overlay"></div>
