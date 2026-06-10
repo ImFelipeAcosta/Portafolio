@@ -28,16 +28,14 @@
     </header>
 
     <main>
+
         <!-- ======== SECCIÓN INICIO (HERO) ======== -->
         <section id="inicio" class="hero-section">
-            <!-- Contenedor para el video interactivo -->
             <div id="metahuman-video-container" class="fade-in">
                 <video id="metahuman-video" playsinline muted preload="auto" webkit-playsinline>
                     <source src="Multimedia/Videos/MetaFelipe.mp4" type="video/mp4">
                     Tu navegador no soporta el elemento de video.
                 </video>
-                
-                <!-- ======== BOTÓN MOVIDO Y REDISEÑADO ======== -->
                 <button id="toggle-interaction-btn" class="interaction-prompt">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="16" height="16" fill="currentColor"><path d="M192 0C103.6 0 32 71.6 32 160V352c0 88.4 71.6 160 160 160s160-71.6 160-160V160C352 71.6 280.4 0 192 0zM224 160v32c0 17.7-14.3 32-32 32s-32-14.3-32-32V160c0-17.7 14.3-32 32-32s32 14.3 32 32z"/></svg>
                     <span data-es="Interactuar" data-en="Interact">Interactuar</span>
@@ -49,14 +47,12 @@
             </div>
         </section>
 
-        <!-- (El resto de tu HTML sigue igual) -->
-        
-        <!-- ======== SECCIÓN DE PROYECTOS (TEXTOS CORREGIDOS) ======== -->
+        <!-- ======== SECCIÓN DE PROYECTOS ======== -->
         <section id="proyectos" class="section">
             <div class="container">
                 <h2 class="section-title fade-in" data-es="Portafolio de Proyectos" data-en="Project Portfolio">Portafolio de Proyectos</h2>
                 <div class="proyectos-grid">
-        
+
                     <!-- Proyecto 1: Meta human -->
                     <div class="proyecto-horizontal-card full-width-grid-item fade-in">
                         <div class="browser-mockup">
@@ -73,8 +69,60 @@
                             <p data-es="En este proyecto personal, mi objetivo fue crear un modelo 3D fotorrealista de mí mismo. Para lograrlo, realicé un escaneo 3D de mi cabeza con PolyCam para generar una malla base. Posteriormente, suavicé y refiné esta malla en Blender y la importé a Unreal Engine, donde utilicé la herramienta MetaHuman para generar mi versión digital final." data-en="In this personal project, my goal was to create a photorealistic 3D model of myself. To achieve this, I performed a 3D scan of my head with PolyCam to generate a base mesh. Then, I refined the mesh in Blender and imported it into Unreal Engine, where I used the MetaHuman tool to generate my final digital version.">En este proyecto personal, mi objetivo fue crear un modelo 3D fotorrealista de mí mismo. Para lograrlo, realicé un escaneo 3D de mi cabeza con PolyCam para generar una malla base. Posteriormente, suavicé y refiné esta malla en Blender y la importé a Unreal Engine, donde utilicé la herramienta MetaHuman para generar mi versión digital final.</p>
                         </div>
                     </div>
-        
-                    <!-- Proyecto 2: Cómic Interactivo -->
+
+                    <!-- Proyecto 2: Páginas Web Interactivas -->
+                    <div class="proyecto-horizontal-card full-width-grid-item fade-in">
+                        <div class="browser-mockup">
+                            <div class="browser-header">
+                                <div class="dots">
+                                    <span class="dot red"></span>
+                                    <span class="dot yellow"></span>
+                                    <span class="dot green"></span>
+                                </div>
+                            </div>
+                            <div class="browser-screen">
+                                <div id="webdev-splide" class="splide webdev-video-splide">
+                                    <div class="splide__track">
+                                        <ul class="splide__list">
+                                            <li class="splide__slide">
+                                                <video src="Multimedia/Videos/Acordimedio.mp4" poster="Multimedia/Videos/Portadas/Acordimedio.png" playsinline loop muted controls></video>
+                                            </li>
+                                            <li class="splide__slide">
+                                                <video src="Multimedia/Videos/Emova.mp4" poster="Multimedia/Videos/Portadas/Emova.png" playsinline loop muted controls></video>
+                                            </li>
+                                            <li class="splide__slide">
+                                                <video src="Multimedia/Videos/SaveITKill.mp4" poster="Multimedia/Videos/Portadas/SaveITKill.png" playsinline loop muted controls></video>
+                                            </li>
+                                            <li class="splide__slide">
+                                                <video src="Multimedia/Videos/NavegandoElCorazon.mp4" poster="Multimedia/Videos/Portadas/Navegando.png" playsinline loop muted controls></video>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="horizontal-card-content">
+                            <span class="category" data-es="Desarrollo Web / Frontend & Backend" data-en="Web Development / Frontend & Backend">Desarrollo Web / Frontend & Backend</span>
+                            <h3 data-es="Páginas Web Interactivas" data-en="Interactive Web Pages">Páginas Web Interactivas</h3>
+                            <p data-es="He desarrollado proyectos web completos, abarcando tanto el diseño visual como la implementación técnica. Cada sitio combina una interfaz intuitiva con funcionalidades robustas, priorizando la experiencia de usuario y el rendimiento." data-en="I have developed complete web projects, covering both visual design and technical implementation. Each site combines an intuitive interface with robust functionality, prioritizing user experience and performance.">He desarrollado proyectos web completos, abarcando tanto el diseño visual como la implementación técnica. Cada sitio combina una interfaz intuitiva con funcionalidades robustas, priorizando la experiencia de usuario y el rendimiento.</p>
+                            <div class="webdev-buttons">
+                                <a href="https://acordimedio.netlify.app/" target="_blank" class="webdev-btn">
+                                    <img src="Multimedia/Logos/Acordimedio.png" alt="Logo Acordimedio">
+                                </a>
+                                <a href="https://emova.cl/" target="_blank" class="webdev-btn">
+                                    <img src="Multimedia/Logos/Emova.png" alt="Logo Emova">
+                                </a>
+                                <a href="https://save-or-eliminate.vercel.app/" target="_blank" class="webdev-btn">
+                                    <img src="Multimedia/Logos/SaveKill.png" alt="Logo Save IT Kill IT">
+                                </a>
+                                <a href="https://navegandoelcorazon.netlify.app" target="_blank" class="webdev-btn">
+                                    <img src="Multimedia/Logos/Navegando.png" alt="Logo Navegando El Corazón">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Proyecto 3: Cómic Interactivo -->
                     <div class="proyecto-galeria-card full-width-grid-item fade-in">
                         <div class="gallery-frame-mockup">
                             <div class="gallery-inner-container">
@@ -101,8 +149,8 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Proyecto 3: Galería de Renders -->
+
+                    <!-- Proyecto 4: Galería de Renders -->
                     <div class="proyecto-galeria-card full-width-grid-item fade-in">
                         <div class="gallery-frame-mockup">
                             <div class="gallery-inner-container">
@@ -125,8 +173,8 @@
                             </div>
                         </div>
                     </div>
-        
-                    <!-- Proyecto 4: Video Vertical 1 -->
+
+                    <!-- Proyecto 5: Video Vertical 1 -->
                     <div class="proyecto-video-card fade-in">
                         <div class="phone-mockup">
                             <div class="phone-screen">
@@ -139,8 +187,8 @@
                             <p data-es="Asumí la dirección y postproducción de esta escena, donde me enfoqué en la corrección de color, composición de planos y sincronización de audio, todo dentro de DaVinci Resolve." data-en="I assumed the direction and post-production of this scene, focusing on color correction, shot composition, and audio synchronization, all within DaVinci Resolve.">Asumí la dirección y postproducción de esta escena, donde me enfoqué en la corrección de color, composición de planos y sincronización de audio, todo dentro de DaVinci Resolve.</p>
                         </div>
                     </div>
-        
-                    <!-- Proyecto 5: Video Vertical 2 -->
+
+                    <!-- Proyecto 6: Video Vertical 2 -->
                     <div class="proyecto-video-card fade-in">
                         <div class="phone-mockup">
                             <div class="phone-screen">
@@ -153,28 +201,8 @@
                             <p data-es="Para este video, creé un efecto de transición con máscaras de recorte en Vegas Pro. Además, realicé el procesamiento de audio en Adobe Audition para lograr un cambio de tono preciso." data-en="For this video, I created a transition effect with clipping masks in Vegas Pro. Additionally, I performed audio processing in Adobe Audition to achieve a precise tone change.">Para este video, creé un efecto de transición con máscaras de recorte en Vegas Pro. Además, realicé el procesamiento de audio en Adobe Audition para lograr un cambio de tono preciso.</p>
                         </div>
                     </div>
-        
-                    <!-- Proyecto 6: Video Horizontal 3 -->
-                    <div class="proyecto-horizontal-card full-width-grid-item fade-in">
-                        <div class="browser-mockup">
-                            <div class="browser-header">
-                                <div class="dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
-                            </div>
-                            <div class="browser-screen">
-                                <video src="Multimedia/Videos/NavegandoElCorazon.mp4" poster="Multimedia/Videos/Portadas/Navegando.png" playsinline loop muted controls></video>
-                            </div>
-                        </div>
-                        <div class="horizontal-card-content">
-                            <span class="category" data-es="Diseño Sonoro / Edición de Audio" data-en="Sound Design / Audio Editing">Diseño Sonoro / Edición de Audio</span>
-                            <h3>Navegando El Corazón</h3>
-                            <p data-es="En esta página web interactiva, fui el responsable de toda la producción de audio. Utilicé librerías de Pixabay para crear los sonidos ambientales y la herramienta de I.A. SUNO para generar las canciones. Finalmente, implementé el plugin DearVR en Adobe Audition para dar a todo el audio un efecto envolvente." data-en="In this interactive web page, I was responsible for all audio production. I used Pixabay libraries to create ambient sounds and the AI tool SUNO to generate songs. Finally, I implemented the DearVR plugin in Adobe Audition to give all the audio an immersive effect.">En esta página web interactiva, fui el responsable de toda la producción de audio. Utilicé librerías de Pixabay para crear los sonidos ambientales y la herramienta de I.A. SUNO para generar las canciones. Finalmente, implementé el plugin DearVR en Adobe Audition para dar a todo el audio un efecto envolvente.</p>
-                            <a href="https://navegandoelcorazon.netlify.app" target="_blank" class="action-link" data-es="Visita &quot;Navegando El Corazón&quot; aquí" data-en="Visit &quot;Navegando El Corazón&quot; here">
-                                 Visita "Navegando El Corazón" aquí
-                            </a>
-                        </div>
-                    </div>
-        
-                    <!-- Proyecto 7: Video Horizontal 4 -->
+
+                    <!-- Proyecto 8: Los 4 Elementos -->
                     <div class="proyecto-horizontal-card full-width-grid-item fade-in">
                         <div class="browser-mockup">
                             <div class="browser-header">
@@ -188,13 +216,11 @@
                             <span class="category" data-es="Diseño Sonoro / Edición de Audio" data-en="Sound Design / Audio Editing">Diseño Sonoro / Edición de Audio</span>
                             <h3>Los 4 Elementos De La Multimedia</h3>
                             <p data-es="Para este videojuego educativo web, me encargué de la producción de audio. Diseñé y creé todos los sonidos ambientales para cada mundo del juego utilizando librerías de audio y Adobe Audition." data-en="For this educational web game, I was in charge of audio production. I designed and created all ambient sounds for each game world using audio libraries and Adobe Audition.">Para este videojuego educativo web, me encargué de la producción de audio. Diseñé y creé todos los sonidos ambientales para cada mundo del juego utilizando librerías de audio y Adobe Audition.</p>
-                            <a href="https://xdark-phoe-nix.itch.io/stem-juego" target="_blank" class="action-link" data-es="Visita &quot;Los 4 Elementos De La Multimedia&quot; aquí" data-en="Visit &quot;Los 4 Elementos De La Multimedia&quot; here">
-                                 Visita "Los 4 Elementos De La Multimedia" aquí
-                            </a>
+                            <a href="https://xdark-phoe-nix.itch.io/stem-juego" target="_blank" class="action-link" data-es="Visita &quot;Los 4 Elementos De La Multimedia&quot; aquí" data-en="Visit &quot;Los 4 Elementos De La Multimedia&quot; here">Visita "Los 4 Elementos De La Multimedia" aquí</a>
                         </div>
                     </div>
-        
-                    <!-- Proyecto 8: Video Horizontal 5 -->
+
+                    <!-- Proyecto 9: Showreel VFX -->
                     <div class="proyecto-horizontal-card full-width-grid-item fade-in">
                         <div class="browser-mockup">
                             <div class="browser-header">
@@ -210,110 +236,48 @@
                             <p data-es="En esta compilación de efectos visuales, demuestro mis habilidades en tracking, composición y rotoscopia. Para estos proyectos, utilicé DaVinci Resolve, Adobe After Effects y Adobe Premiere Pro." data-en="In this compilation of visual effects, I demonstrate my skills in tracking, composition, and rotoscoping. For these projects, I used DaVinci Resolve, Adobe After Effects, and Adobe Premiere Pro.">En esta compilación de efectos visuales, demuestro mis habilidades en tracking, composición y rotoscopia. Para estos proyectos, utilicé DaVinci Resolve, Adobe After Effects y Adobe Premiere Pro.</p>
                         </div>
                     </div>
-        
-                    <!-- ========= PROYECTO 9: BROCHURE INTERACTIVO ========= -->
-                    <div class="proyecto-galeria-card full-width-grid-item fade-in">
-                                <div class="gallery-frame-mockup">
-                                    <div class="gallery-inner-container">
-                                        <div class="gallery-carousel-column">
-                                            <div id="brochure-splide" class="splide"> <!-- ID ÚNICO -->
-                                                <div class="splide__track">
-                                                    <ul class="splide__list">
-                                                        <li class="splide__slide"><img src="Multimedia/Diseno/Brochure/002.png" alt="Página 1"></li>
-                                                        <li class="splide__slide"><img src="Multimedia/Diseno/Brochure/003.png" alt="Página 2"></li>
-                                                        <li class="splide__slide"><img src="Multimedia/Diseno/Brochure/004.png" alt="Página 3"></li>
-                                                        <li class="splide__slide"><img src="Multimedia/Diseno/Brochure/005.png" alt="Página 4"></li>
-                                                        <li class="splide__slide"><img src="Multimedia/Diseno/Brochure/006.png" alt="Página 5"></li>
-                                                        <li class="splide__slide"><img src="Multimedia/Diseno/Brochure/007.png" alt="Página 6"></li>
-                                                        <li class="splide__slide"><img src="Multimedia/Diseno/Brochure/008.png" alt="Página 7"></li>
-                                                        <li class="splide__slide"><img src="Multimedia/Diseno/Brochure/009.png" alt="Página 8"></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="gallery-description-column">
-                                            <span class="category" data-es="Diseño Editorial / Maquetación" data-en="Editorial Design / Layout">Diseño Editorial / Maquetación</span>
-                                            <h3 data-es="Diseño de Brochure Corporativo" data-en="Corporate Brochure Design">Diseño de Brochure Corporativo</h3>
-                                            <p data-es="Maquetación y diseño de un brochure, enfocado en una composición limpia, jerarquía visual clara y una presentación atractiva de la información." data-en="Layout and design of a brochure, focused on clean composition, clear visual hierarchy, and attractive information presentation.">Maquetación y diseño de un brochure, enfocado en una composición limpia, jerarquía visual clara y una presentación atractiva de la información.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-        
-                            <!-- ========= PROYECTO 10: MENÚ DE RESTAURANTE ========= -->
-        <div class="proyecto-galeria-card full-width-grid-item fade-in">
-            <div class="gallery-frame-mockup">
-                <div class="gallery-inner-container">
-        
-                    <!-- Columna Izquierda: La Descripción (AHORA PRIMERO) -->
-                    <div class="gallery-description-column">
-                        <span class="category" data-es="Diseño Gráfico / Diseño Editorial" data-en="Graphic Design / Editorial Design">Diseño Gráfico / Diseño Editorial</span>
-                        <h3 data-es="Diseño de Menú para Restaurante" data-en="Restaurant Menu Design">Diseño de Menú para Restaurante</h3>
-                        <p data-es="Creación de la identidad visual y maquetación para el menú del restaurante &quot;Mi Carnal&quot;. El diseño se enfoca en una tipografía clara, una paleta de colores cálida y una organización intuitiva para mejorar la experiencia del cliente." data-en="Creation of the visual identity and layout for the &quot;Mi Carnal&quot; restaurant menu. The design focuses on clear typography, a warm color palette, and intuitive organization to enhance customer experience.">Creación de la identidad visual y maquetación para el menú del restaurante "Mi Carnal". El diseño se enfoca en una tipografía clara, una paleta de colores cálida y una organización intuitiva para mejorar la experiencia del cliente.</p>
+
+                </div><!-- fin .proyectos-grid -->
+            </div><!-- fin .container -->
+        </section>
+
+        <!-- ======== SECCIÓN SOBRE MÍ ======== -->
+        <section id="sobre-mi" class="section">
+            <div class="container">
+                <h2 class="section-title fade-in" data-es="Sobre Mí" data-en="About Me">Sobre Mí</h2>
+                <div class="bio-container fade-in">
+                    <div class="bio-photo-wrapper">
+                        <img src="Multimedia/Perfil/Raul perfil.png" alt="Foto de Raúl Felipe Acosta Fontecha" class="profile-pic">
                     </div>
-        
-                    <!-- Columna Derecha: El Carrusel (AHORA SEGUNDO) -->
-                    <div class="gallery-carousel-column">
-                        <div id="menu-splide" class="splide"> <!-- ¡ID ÚNICO! -->
-                            <div class="splide__track">
-                                <ul class="splide__list">
-                                    <li class="splide__slide"><img src="Multimedia/Diseno/Menu/1.png" alt="Página 1 del Menú"></li>
-                                    <li class="splide__slide"><img src="Multimedia/Diseno/Menu/2.png" alt="Página 2 del Menú"></li>
-                                    <li class="splide__slide"><img src="Multimedia/Diseno/Menu/3.png" alt="Página 3 del Menú"></li>
-                                    <li class="splide__slide"><img src="Multimedia/Diseno/Menu/4.png" alt="Página 4 del Menú"></li>
-                                    <li class="splide__slide"><img src="Multimedia/Diseno/Menu/5.png" alt="Página 5 del Menú"></li>
-                                    <!-- Añade tantas páginas como tenga tu menú -->
-                                </ul>
-                            </div>
-                        </div>
+                    <div class="bio-text-wrapper">
+                        <p data-es="¡Hola! Soy Felipe Acosta, un apasionado por el área de sistemas, he sido destacado por hacer las cosas con dedicación. Preparado para asumir retos, tengo la capacidad de aprender rápido lo que se me propone, trazando objetivos y metas por cumplir." data-en="Hi! I'm Felipe Acosta, passionate about systems, I have been recognized for doing things with dedication. Ready to take on challenges, I have the ability to learn quickly what is proposed to me, setting objectives and goals to achieve.">¡Hola! Soy Felipe Acosta, un apasionado por el área de sistemas, he sido destacado por hacer las cosas con dedicación. Preparado para asumir retos, tengo la capacidad de aprender rápido lo que se me propone, trazando objetivos y metas por cumplir.</p>
+                        <p data-es="Domino con gran habilidad la post producción de videoclips; trabajando en corrección de color, croma, efectos visuales, transiciones, planos, luces, entre otros. Así como la animación 3D y el render, desde manejo de cámaras, luces, movimiento de personajes, texturizado, entre otros." data-en="I have great skill in video post-production; working on color correction, chroma, visual effects, transitions, shots, lighting, among others. As well as 3D animation and rendering, from camera management, lighting, character movement, texturing, among others.">Domino con gran habilidad la post producción de videoclips; trabajando en corrección de color, croma, efectos visuales, transiciones, planos, luces, entre otros. Así como la animación 3D y el render, desde manejo de cámaras, luces, movimiento de personajes, texturizado, entre otros.</p>
                     </div>
-                    
+                </div>
+                <div class="tools-subsection fade-in">
+                    <h3 class="tools-subtitle" data-es="Herramientas Principales" data-en="Main Tools">Herramientas Principales</h3>
+                    <div class="sobre-mi-tools-grid">
+                        <div class="tool-card"><img src="Multimedia/Logos/PremierePro.png" alt="Adobe Premiere Pro"> <span>Premiere Pro</span></div>
+                        <div class="tool-card"><img src="Multimedia/Logos/DaVinci.png" alt="DaVinci Resolve"> <span>DaVinci Resolve</span></div>
+                        <div class="tool-card"><img src="Multimedia/Logos/AfterEffects.png" alt="Adobe After Effects"> <span>After Effects</span></div>
+                        <div class="tool-card"><img src="Multimedia/Logos/Audition.png" alt="Adobe Audition"> <span>Audition</span></div>
+                        <div class="tool-card"><img src="Multimedia/Logos/Maya.svg" alt="Autodesk Maya"> <span>Maya</span></div>
+                        <div class="tool-card"><img src="Multimedia/Logos/Blender.png" alt="Blender"> <span>Blender</span></div>
+                        <div class="tool-card"><img src="Multimedia/Logos/Unreal.png" alt="Unreal Engine"> <span>Unreal Engine</span></div>
+                        <div class="tool-card"><img src="Multimedia/Logos/Unity.png" alt="Unity"> <span>Unity</span></div>
+                        <div class="tool-card"><img src="Multimedia/Logos/Illustrator.png" alt="Adobe Illustrator"> <span>Illustrator</span></div>
+                        <div class="tool-card"><img src="Multimedia/Logos/VisualStudio.png" alt="VS Code"> <span>VS Code</span></div>
+                        <div class="tool-card"><img src="Multimedia/Logos/Figma.png" alt="Figma"> <span>Figma</span></div>
+                        <div class="tool-card"><img src="Multimedia/Logos/Canva.png" alt="Canva"> <span>Canva</span></div>
+                    </div>
                 </div>
             </div>
-        </div>
-        
-                </div> <!-- Fin de .proyectos-grid -->
-            </div> <!-- Fin de .container -->
         </section>
-        
-        <!-- ======== SECCIÓN SOBRE MÍ ======== -->
-                <section id="sobre-mi" class="section">
-                    <div class="container">
-                        <h2 class="section-title fade-in" data-es="Sobre Mí" data-en="About Me">Sobre Mí</h2>
-                        <div class="bio-container fade-in">
-                            <div class="bio-photo-wrapper">
-                                <img src="Multimedia/Perfil/Raul perfil.png" alt="Foto de Raúl Felipe Acosta Fontecha" class="profile-pic">
-                            </div>
-                            <div class="bio-text-wrapper">
-                                <p data-es="¡Hola! Soy Felipe Acosta, un apasionado por el área de sistemas, he sido destacado por hacer las cosas con dedicación. Preparado para asumir retos, tengo la capacidad de aprender rápido lo que se me propone, trazando objetivos y metas por cumplir." data-en="Hi! I'm Felipe Acosta, passionate about systems, I have been recognized for doing things with dedication. Ready to take on challenges, I have the ability to learn quickly what is proposed to me, setting objectives and goals to achieve.">¡Hola! Soy Felipe Acosta, un apasionado por el área de sistemas, he sido destacado por hacer las cosas con dedicación. Preparado para asumir retos, tengo la capacidad de aprender rápido lo que se me propone, trazando objetivos y metas por cumplir.</p>
-                                <p data-es="Domino con gran habilidad la post producción de videoclips; trabajando en corrección de color, croma, efectos visuales, transiciones, planos, luces, entre otros. Así como la animación 3D y el render, desde manejo de cámaras, luces, movimiento de personajes, texturizado, entre otros." data-en="I have great skill in video post-production; working on color correction, chroma, visual effects, transitions, shots, lighting, among others. As well as 3D animation and rendering, from camera management, lighting, character movement, texturing, among others.">Domino con gran habilidad la post producción de videoclips; trabajando en corrección de color, croma, efectos visuales, transiciones, planos, luces, entre otros. Así como la animación 3D y el render, desde manejo de cámaras, luces, movimiento de personajes, texturizado, entre otros.</p>
-                            </div>
-                        </div>
-                        <div class="tools-subsection fade-in">
-                            <h3 class="tools-subtitle" data-es="Herramientas Principales" data-en="Main Tools">Herramientas Principales</h3>
-                            <div class="sobre-mi-tools-grid">
-                                <div class="tool-card"><img src="Multimedia/Logos/PremierePro.png" alt="Adobe Premiere Pro"> <span>Premiere Pro</span></div>
-                                <div class="tool-card"><img src="Multimedia/Logos/DaVinci.png" alt="DaVinci Resolve"> <span>DaVinci Resolve</span></div>
-                                <div class="tool-card"><img src="Multimedia/Logos/AfterEffects.png" alt="Adobe After Effects"> <span>After Effects</span></div>
-                                <div class="tool-card"><img src="Multimedia/Logos/Audition.png" alt="Adobe Audition"> <span>Audition</span></div>
-                                <div class="tool-card"><img src="Multimedia/Logos/Maya.svg" alt="Autodesk Maya"> <span>Maya</span></div>
-                                <div class="tool-card"><img src="Multimedia/Logos/Blender.png" alt="Blender"> <span>Blender</span></div>
-                                <div class="tool-card"><img src="Multimedia/Logos/Unreal.png" alt="Unreal Engine"> <span>Unreal Engine</span></div>
-                                <div class="tool-card"><img src="Multimedia/Logos/Unity.png" alt="Unity"> <span>Unity</span></div>
-                                <div class="tool-card"><img src="Multimedia/Logos/Illustrator.png" alt="Adobe Illustrator"> <span>Illustrator</span></div>
-                                <div class="tool-card"><img src="Multimedia/Logos/VisualStudio.png" alt="VS Code"> <span>VS Code</span></div>
-                                <div class="tool-card"><img src="Multimedia/Logos/Figma.png" alt="Figma"> <span>Figma</span></div>
-                                <div class="tool-card"><img src="Multimedia/Logos/Canva.png" alt="Canva"> <span>Canva</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-        
-                <!-- ======== SECCIÓN DE CONTACTO ======== -->
-                <section id="contacto" class="section">
-                <div class="container">
+
+        <!-- ======== SECCIÓN DE CONTACTO ======== -->
+        <section id="contacto" class="section">
+            <div class="container">
                 <h2 class="section-title text-center fade-in" data-es="Hablemos" data-en="Let's Talk">Hablemos</h2>
-                <!-- Formulario conectado a Formspree -->
                 <form id="contact-form" class="contact-form fade-in" action="https://formspree.io/f/mvgrbzyg" method="POST">
                     <div class="form-group">
                         <label for="name" data-es="Nombre" data-en="Name">Nombre</label>
@@ -327,13 +291,12 @@
                         <label for="message" data-es="Mensaje" data-en="Message">Mensaje</label>
                         <textarea id="message" name="message" rows="5" placeholder="Write your message..." required></textarea>
                     </div>
-        
                     <div id="form-status"></div>
-        
                     <button type="submit" class="cta-button" data-es="Enviar Mensaje" data-en="Send Message">Enviar Mensaje</button>
                 </form>
-                </div>
-                </section>
+            </div>
+        </section>
+
     </main>
 
     <!-- ======== FOOTER ======== -->
@@ -353,14 +316,13 @@
             <span class="lang-text">EN</span>
         </button>
     </div>
-    
-    <!-- ======== CAPA DE INTERACCIÓN AÑADIDA ======== -->
-    <div id="interaction-overlay"></div>
 
+    <!-- ======== CAPA DE INTERACCIÓN ======== -->
+    <div id="interaction-overlay"></div>
 
     <!-- SCRIPTS -->
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-    <script src="script.js" defer></script> 
+    <script src="script.js" defer></script>
 
 </body>
 </html>
