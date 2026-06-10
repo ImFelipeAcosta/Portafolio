@@ -1,0 +1,49 @@
+<!-- 
+  EJEMPLO: Cómo agregar más elementos traducibles a tu portafolio
+  ================================================================
+  
+  Simplemente agrega los atributos data-es y data-en a cualquier elemento
+  que desees traducir.
+-->
+
+<!-- EJEMPLO 1: Traducir un párrafo -->
+<p data-es="Este es un texto en español" data-en="This is a text in English">
+  Este es un texto en español
+</p>
+
+<!-- EJEMPLO 2: Traducir un título -->
+<h3 data-es="Mi Proyecto Especial" data-en="My Special Project">
+  Mi Proyecto Especial
+</h3>
+
+<!-- EJEMPLO 3: Traducir un enlace -->
+<a href="#" data-es="Haz clic aquí" data-en="Click here">
+  Haz clic aquí
+</a>
+
+<!-- EJEMPLO 4: Traducir etiquetas de formulario -->
+<label for="nombre" data-es="Tu Nombre" data-en="Your Name">Tu Nombre</label>
+<input type="text" id="nombre" name="nombre" required>
+
+<!-- EJEMPLO 5: Traducir botones -->
+<button class="btn" data-es="Descargar CV" data-en="Download CV">
+  Descargar CV
+</button>
+
+<!-- 
+  ⚠️ IMPORTANTE:
+  
+  1. Siempre usa AMBOS atributos: data-es Y data-en
+  2. El texto visible dentro del elemento debe coincidir con data-es (español por defecto)
+  3. JavaScript detectará automáticamente estos atributos
+  4. La traducción ocurre cuando el usuario hace clic en el botón de idioma
+  
+  ✅ CORRECTO:
+  <h2 data-es="Sobre Mí" data-en="About Me">Sobre Mí</h2>
+  
+  ❌ INCORRECTO (falta data-en):
+  <h2 data-es="Sobre Mí">Sobre Mí</h2>
+  
+  ❌ INCORRECTO (no coincide):
+  <h2 data-es="About Me" data-en="Sobre Mí">Sobre Mí</h2>
+-->
