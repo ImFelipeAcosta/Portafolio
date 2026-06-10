@@ -4,7 +4,7 @@
 :root {
     --color-background: #111111;
     --color-surface: #1d1d1d;
-    --color-primary: #956eff;
+    --color-primary: #4676dd;
     --color-primary-rgb: 149, 110, 255; /* Color primario en formato RGB */
     --color-text: #e0e0e0;
     --color-text-muted: #888888;
@@ -54,7 +54,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .cta-button:hover {
     transform: translateY(-3px);
-    background-color: #9333ea;
+    background-color: #4676dd;
 }
 .text-center { text-align: center !important; }
 
@@ -94,9 +94,7 @@ h1, h2, h3, h4, h5, h6 {
 .main-header .container {
     display: flex;
     align-items: center;
-    /* Mantenemos space-between para cuando el logo aparece */
-    justify-content: space-between; 
-    /* Hacemos el contenedor relativo para posicionar la navegación de forma absoluta */
+    justify-content: space-between;
     position: relative;
 }
 
@@ -112,11 +110,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .main-nav {
-    /* Estado inicial: Posicionada absolutamente en el centro del contenedor */
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%); /* Truco clásico para centrado perfecto */
+    transform: translate(-50%, -50%);
     transition: transform 0.5s ease-in-out;
 }
 
@@ -128,9 +125,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .main-header.scrolled .main-nav {
-    /* Al hacer scroll, la volvemos a su estado de flujo normal */
-    position: static; /* La devolvemos al flujo del documento */
-    transform: translate(0, 0); /* Reseteamos la transformación */
+    position: static;
+    transform: translate(0, 0);
 }
 
 .main-nav ul {
@@ -151,18 +147,18 @@ h1, h2, h3, h4, h5, h6 {
 /* ==========================================================================
    4. SECCIÓN HERO
    ========================================================================== */
-.hero-section { 
-    min-height: 100vh; /* <-- CAMBIO 1: Permite que la sección sea más pequeña si el contenido cabe */
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    justify-content: center; /* <-- CAMBIO 2: Lo volvemos a centrar verticalmente */
-    padding-bottom: 10vh; /* <-- CAMBIO 3: Añadimos un padding inferior para controlar el espacio */
-    text-align: center; 
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10vh;
+    text-align: center;
     padding-left: 20px;
     padding-right: 20px;
-    position: relative; 
-    overflow: hidden; 
+    position: relative;
+    overflow: hidden;
 }
 .hero-title-container { margin-top: 3rem; }
 .hero-title-container h1 { font-size: 4.5rem; line-height: 1; color: var(--color-text); margin-bottom: 0.5rem; }
@@ -176,8 +172,8 @@ h1, h2, h3, h4, h5, h6 {
     aspect-ratio: 1 / 1;
     border-radius: 50%;
     overflow: hidden;
-    position: relative; /* Clave para posicionar el botón dentro */
-    box-shadow: 0 0 40px rgba(173, 101, 255, 0.25);
+    position: relative;
+    box-shadow: 0 0 40px rgba(101, 129, 255, 0.25);
     border: 2px solid var(--color-surface);
 }
 
@@ -185,23 +181,21 @@ h1, h2, h3, h4, h5, h6 {
     width: 80%;
     height: 80%;
     object-fit: cover;
-    transform: scale(1.4) translateY(5%); 
+    transform: scale(1.4) translateY(5%);
 }
 
 /* ======== ESTILOS PARA EL NUEVO BOTÓN DE INTERACCIÓN ======== */
 .interaction-prompt {
     position: absolute;
-    bottom: 10%; /* Lo posicionamos en la parte inferior del círculo */
+    bottom: 10%;
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
 
-    /* Estilo Glassmorphism */
     background: rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    
-    /* Diseño y tipografía */
+
     color: var(--color-text);
     font-family: var(--font-body);
     font-weight: 600;
@@ -210,12 +204,10 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 50px;
     cursor: pointer;
 
-    /* Layout interno (icono + texto) */
     display: flex;
     align-items: center;
     gap: 8px;
 
-    /* Transiciones suaves */
     transition: background 0.3s ease, border-color 0.3s ease, opacity 0.4s ease, transform 0.4s ease;
 
     animation: pulse-glow 1s infinite ease-in-out;
@@ -226,11 +218,10 @@ h1, h2, h3, h4, h5, h6 {
     border-color: rgba(255, 255, 255, 0.3);
 }
 
-/* Ocultamos el botón cuando la interacción está activa */
 body.interaction-active .interaction-prompt {
     opacity: 0;
     transform: translateX(-50%) translateY(20px);
-    pointer-events: none; /* Importante para que no intercepte clics cuando está invisible */
+    pointer-events: none;
 }
 
 
@@ -244,7 +235,7 @@ body.interaction-active .interaction-prompt {
     z-index: 999;
     cursor: crosshair;
     display: none;
-    touch-action: none; /* Prevenir scroll mientras se interactúa */
+    touch-action: none;
 }
 body.interaction-active #interaction-overlay {
     display: block;
@@ -263,8 +254,8 @@ body.interaction-active #interaction-overlay {
 }
 
 /* -- Estilos de Texto Comunes para todos los Proyectos */
-.gallery-description-column span, 
-.video-card-content span, 
+.gallery-description-column span,
+.video-card-content span,
 .horizontal-card-content span {
     display: block;
     font-size: 0.8rem;
@@ -273,14 +264,14 @@ body.interaction-active #interaction-overlay {
     margin-bottom: 10px;
     text-transform: uppercase;
 }
-.gallery-description-column h3, 
-.video-card-content h3, 
+.gallery-description-column h3,
+.video-card-content h3,
 .horizontal-card-content h3 {
     font-size: 1.8rem;
     margin-bottom: 10px;
 }
-.gallery-description-column p, 
-.video-card-content p, 
+.gallery-description-column p,
+.video-card-content p,
 .horizontal-card-content p {
     color: var(--color-text-muted);
 }
@@ -294,7 +285,7 @@ body.interaction-active #interaction-overlay {
     width: 100%;
 }
 .gallery-frame-mockup {
-    width: 95%; /* Tamaño grande */
+    width: 95%;
     max-width: 1400px;
     background-color: #0a0a0a;
     padding: 2rem;
@@ -307,19 +298,19 @@ body.interaction-active #interaction-overlay {
     gap: 2rem;
 }
 .gallery-description-column {
-    width: 30%; /* Texto 30% */
+    width: 30%;
     text-align: left;
 }
 .gallery-carousel-column {
-    width: 70%; /* Visual 70% */
+    width: 70%;
     flex-shrink: 0;
 }
 
 /* --- Carruseles Splide dentro de la galería --- */
-#renders-carrusel, 
-#comic-splide, 
+#renders-carrusel,
+#comic-splide,
 #brochure-splide,
-#menu-splide { /* <-- Corregido para apuntar al contenedor del carrusel */
+#menu-splide {
     width: 100%;
     border-radius: 8px;
     overflow: hidden;
@@ -329,26 +320,26 @@ body.interaction-active #interaction-overlay {
 #renders-carrusel .splide__slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Para los renders que deben llenar el espacio */
+    object-fit: cover;
 }
 
-#comic-splide .splide__slide img, 
+#comic-splide .splide__slide img,
 #brochure-splide .splide__slide img,
-#menu-splide .splide__slide img { /* <-- Corregido para apuntar a la imagen */
+#menu-splide .splide__slide img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Para que se vea la página/menú completo */
+    object-fit: contain;
 }
 
 /* Proporción para los carruseles tipo libro/documento */
-#comic-splide .splide__slide, 
+#comic-splide .splide__slide,
 #brochure-splide .splide__slide,
 #menu-splide .splide__slide {
     aspect-ratio: 2 / 3;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #000; /* Fondo por si la imagen no llena todo */
+    background-color: #000;
 }
 
 
@@ -516,13 +507,13 @@ body.interaction-active #interaction-overlay {
     font-size: 0.9rem;
     cursor: pointer;
     transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 10px 25px rgba(149, 110, 255, 0.3);
+    box-shadow: 0 10px 25px rgba(110, 112, 255, 0.5);
 }
 
 .lang-button:hover {
     transform: translateY(-3px);
-    background-color: #9333ea;
-    box-shadow: 0 15px 35px rgba(149, 110, 255, 0.5);
+    background-color: #4676dd;
+    box-shadow: 0 15px 35px rgba(110, 112, 255, 0.5);
 }
 
 .lang-button:active {
@@ -537,24 +528,6 @@ body.interaction-active #interaction-overlay {
 
 .lang-text {
     display: inline-block;
-}
-
-/* Responsive: en móviles hacemos el botón más compacto */
-@media (max-width: 820px) {
-    .language-toggle {
-        bottom: 20px;
-        right: 20px;
-    }
-
-    .lang-button {
-        padding: 10px 14px;
-        font-size: 0.85rem;
-    }
-
-    .lang-button svg {
-        width: 18px;
-        height: 18px;
-    }
 }
 
 /* ======== ANIMACIÓN PARA EL BOTÓN DE INTERACCIÓN ======== */
@@ -580,44 +553,186 @@ body.interaction-active #interaction-overlay {
 @media (max-width: 820px) {
     .section { padding: 80px 0; }
     .section-title { font-size: 2.2rem; }
-    /* ======== CAMBIOS PARA EL HEADER EN MÓVIL (VERSIÓN SIMPLE) ======== */
+
+    /* ======== CAMBIOS PARA EL HEADER EN MÓVIL ======== */
     .main-header {
         transform: translateY(-100%);
         transition: transform 0.5s ease-in-out;
     }
 
-    /* 1. Ocultamos permanentemente la navegación en móvil */
     .main-nav {
         display: none;
     }
 
-    /* 2. El contenedor del header siempre centrará su contenido */
     .main-header .container {
         justify-content: center;
     }
 
-    /* 3. Cuando se hace scroll, el header aparece */
     .main-header.scrolled {
         transform: translateY(0);
     }
+
     .hero-title-container h1 { font-size: 2.5rem; }
     .hero-title-container h2 { font-size: 1.2rem; }
-    #metahuman-video-container { width: 100%; max-width: 450px;}
-     .proyectos-grid { grid-template-columns: 1fr; gap: 4rem; }
+    #metahuman-video-container { width: 100%; max-width: 450px; }
+
+    .proyectos-grid { grid-template-columns: 1fr; gap: 4rem; }
+
     .gallery-frame-mockup { width: 100%; padding: 1rem; }
     .gallery-inner-container { flex-direction: column !important; gap: 1.5rem; }
     .gallery-inner-container > .gallery-carousel-column:first-child + .gallery-description-column { order: 1; }
     .gallery-description-column, .gallery-carousel-column { width: 100%; }
     .gallery-description-column { text-align: center; padding-top: 2rem; }
+
     .proyecto-horizontal-card { width: 100%; }
     .phone-mockup { max-width: 350px; }
+
     .bio-container { flex-direction: column; text-align: center; }
     .profile-pic { width: 200px; height: 200px; }
     .bio-text-wrapper { margin-top: 2rem; }
     .sobre-mi-tools-grid { grid-template-columns: repeat(2, 1fr); }
+
+    /* ---- Proyecto: Páginas Web Interactivas ---- */
+    .webdev-buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem;
+    }
+
+    .webdev-btn {
+        flex: 0 1 auto;
+        max-width: 100%;
+    }
+
+    /* Botón de idioma en móvil */
+    .language-toggle {
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .lang-button {
+        padding: 10px 14px;
+        font-size: 0.85rem;
+    }
+
+    .lang-button svg {
+        width: 18px;
+        height: 18px;
+    }
 }
 
 @media (max-width: 480px) {
     .logo { font-size: 1.25rem; }
     .section { padding: 60px 0; }
+}
+
+/* ==========================================================================
+   SECCIÓN DESARROLLO WEB
+   ========================================================================== */
+
+/* El carrusel ocupa exactamente el browser-screen (16:9 ya definido por .browser-screen) */
+.webdev-video-splide {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.webdev-video-splide .splide__track,
+.webdev-video-splide .splide__list,
+.webdev-video-splide .splide__slide {
+    height: 100%;
+}
+
+.webdev-video-splide .splide__slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+}
+
+.webdev-video-splide .splide__slide video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Flechas sobre el video */
+.webdev-video-splide .splide__arrow {
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 1;
+}
+.webdev-video-splide .splide__arrow:hover {
+    background: rgba(0, 0, 0, 0.85);
+}
+.webdev-video-splide .splide__arrow svg { fill: #fff; }
+
+/* Puntos de paginación */
+.webdev-video-splide .splide__pagination {
+    bottom: 10px;
+}
+.webdev-video-splide .splide__pagination__page {
+    background: rgba(255, 255, 255, 0.4);
+}
+.webdev-video-splide .splide__pagination__page.is-active {
+    background: var(--color-primary);
+    transform: scale(1.3);
+}
+
+/* Fuerza el ancho completo igual que los otros horizontal-card */
+.webdev-card-override {
+    width: 75%;
+    max-width: 750px;
+}
+
+/* Botones de las webs */
+.webdev-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1.8rem;
+    justify-content: center;
+}
+
+/* ============================================================
+   CORRECCIÓN: botones compactos (flex: 0 1 auto en lugar de
+   crecer para llenar el 50% del contenedor)
+   ============================================================ */
+.webdev-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border: 2px solid var(--color-primary);
+    border-radius: 8px;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 0.8rem;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    flex: 0 1 auto;
+    white-space: nowrap;
+}
+
+.webdev-btn:hover {
+    background-color: var(--color-primary);
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* Logo dentro del botón */
+.webdev-btn-logo {
+    height: 20px;
+    width: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+    filter: brightness(0) saturate(100%) invert(35%) sepia(70%) saturate(600%) hue-rotate(200deg) brightness(95%);
+    transition: filter 0.3s ease;
+}
+
+.webdev-btn:hover .webdev-btn-logo {
+    filter: brightness(0) invert(1);
 }
