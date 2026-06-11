@@ -43,7 +43,9 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('[data-es][data-en]').forEach(element => {
             const text = element.getAttribute(`data-${lang}`);
             if (text) {
-                element.textContent = text;
+                // Usamos innerHTML para soportar etiquetas como <em> dentro
+                // de los títulos editoriales sin perder el formato.
+                element.innerHTML = text;
             }
         });
  
@@ -150,66 +152,12 @@ document.addEventListener('DOMContentLoaded', () => {
     initSplide('#menu-splide',     docOptions);
  
     // --- CARRUSEL DE DESARROLLO WEB ---
-    const webdevEl = document.querySelector('#webdev-splide');
-    if (webdevEl && typeof Splide !== 'undefined') {
- 
-        const webdevInstance = new Splide(webdevEl, {
-            type      : 'loop',
-            perPage   : 1,
-            pagination: true,
-            arrows    : true,
-        });
- 
-        // Datos de cada slide: id del bloque info + id del botón activo
-        const webdevSlides = [
-            { infoId: 'webdev-info-acordimedio', btnId: 'webdev-btn-acordimedio' },
-            { infoId: 'webdev-info-emova',       btnId: 'webdev-btn-emova'       },
-            { infoId: 'webdev-info-saveit',      btnId: 'webdev-btn-saveit'      },
-        ];
- 
-        // Función que sincroniza info y botón activo con el slide actual
-        function syncWebdevSlide(newIndex) {
-            // Normalizar índice (Splide en modo loop puede devolver índices fuera de rango)
-            const idx = ((newIndex % webdevSlides.length) + webdevSlides.length) % webdevSlides.length;
- 
-            // Actualizar bloques de info
-            document.querySelectorAll('.webdev-info-block').forEach(el => el.classList.remove('active'));
-            const infoEl = document.getElementById(webdevSlides[idx].infoId);
-            if (infoEl) infoEl.classList.add('active');
- 
-            // Actualizar botón activo
-            document.querySelectorAll('.webdev-btn').forEach(el => el.classList.remove('is-active-btn'));
-            const btnEl = document.getElementById(webdevSlides[idx].btnId);
-            if (btnEl) btnEl.classList.add('is-active-btn');
- 
-            // Pausar videos que no están activos y reanudar el actual si tenía autoplay
-            document.querySelectorAll('#webdev-splide video').forEach((vid, i) => {
-                if (i !== idx) {
-                    vid.pause();
-                }
-            });
-        }
- 
-        // Clic en botón → navega al slide correspondiente
-        document.querySelectorAll('.webdev-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                const targetIndex = parseInt(btn.getAttribute('data-index'), 10);
-                // Solo navegar, no seguir el href (el href actúa normalmente si no se previene)
-                // No prevenimos default para que siga abriendo la URL
-                webdevInstance.go(targetIndex);
-            });
-        });
- 
-        // Evento al moverse el carrusel
-        webdevInstance.on('moved', (newIndex) => {
-            syncWebdevSlide(newIndex);
-        });
- 
-        webdevInstance.mount();
- 
-        // Estado inicial
-        syncWebdevSlide(0);
-    }
+    initSplide('#webdev-splide', {
+        type      : 'loop',
+        perPage   : 1,
+        pagination: true,
+        arrows    : true,
+    });
  
     // --- FORMULARIO DE CONTACTO ---
     const form       = document.getElementById('contact-form');
@@ -347,4 +295,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-});
+});                                                                                               
